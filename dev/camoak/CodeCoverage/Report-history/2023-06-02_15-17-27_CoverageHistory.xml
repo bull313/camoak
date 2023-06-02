@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<coverage version="1.0" date="2023-06-02_15-17-27" tag="">
+  <assembly name="Tests">
+    <class name="TestCICD" coveredlines="3" coverablelines="3" totallines="10" coveredbranches="0" totalbranches="0" />
+  </assembly>
+</coverage>

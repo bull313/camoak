@@ -1,0 +1,24 @@
+{
+  "summary": {
+    "generatedon": "2023-06-02T22:17:27Z",
+    "parser": "MultiReportParser (2x OpenCoverParser)",
+    "assemblies": 1,
+    "classes": 1,
+    "files": 1,
+    "coveredlines": 3,
+    "uncoveredlines": 0,
+    "coverablelines": 3,
+    "totallines": 10,
+    "linecoverage": 100,
+    "coveredbranches": 0,
+    "totalbranches": 0,
+    "coveredmethods": 1,
+    "totalmethods": 1,
+    "methodcoverage": 100
+ },
+  "coverage": {
+    "assemblies": [
+      { "name": "Tests", "classes": 1, "coverage": 100, "coveredlines": 3, "coverablelines": 3, "totallines": 10, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 100, "coveredmethods": 1, "totalmethods": 1, "classesinassembly": [
+        { "name": "TestCICD", "coverage": 100, "coveredlines": 3, "coverablelines": 3, "totallines": 10, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 100, "coveredmethods": 1, "totalmethods": 1 } ] } ]
+  }
+}
