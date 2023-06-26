@@ -9,7 +9,7 @@ namespace Camoak.Domain.Poker.Context.State
         public int BigBlindSize { get; internal set; }
         public List<int> PlayerPositions { get; internal set; }
         public List<int> PlayersInAction { get; internal set; }
-        public int TurnPlayer { get; internal set; }
+        public int TurnPosition { get; internal set; }
         public float CenterPot { get; internal set; }
 
         public PokerGameState()
@@ -27,7 +27,7 @@ namespace Camoak.Domain.Poker.Context.State
                 + $"{BigBlindSize}"
                 + $"{string.Join("", PlayerPositions.ToArray())}"
                 + $"{string.Join("", PlayersInAction.ToArray())}"
-                + $"{TurnPlayer}"
+                + $"{TurnPosition}"
                 + $"{CenterPot}"
                 ).GetHashCode();
     }

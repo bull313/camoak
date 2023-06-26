@@ -10,7 +10,7 @@ namespace Camoak.Domain.Poker.Context.State.Filter
             BigBlindSize = gameState.BigBlindSize;
             PlayerPositions = gameState.PlayerPositions;
             PlayersInAction = gameState.PlayersInAction;
-            TurnPlayer = gameState.TurnPlayer;
+            TurnPosition = gameState.TurnPosition;
             CenterPot = gameState.CenterPot;
         }
 

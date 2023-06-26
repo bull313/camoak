@@ -2,9 +2,9 @@
 
 namespace Camoak.Domain.Poker.Context.State.Action.Referee.TurnPlayerStrategy
 {
-    public class SmallBlindTurn : ITurnPlayerStrategy
+    public class SmallBlindPosition : ITargetPosition
     {
-        public int GetTurnPlayer(PokerGameState gameState) =>
+        public int GetPosition(PokerGameState gameState) =>
             Math.Abs(Math.Min(gameState.PlayerPositions.Count - 3, 0));
     }
 }

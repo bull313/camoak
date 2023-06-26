@@ -4,7 +4,7 @@
     {
         public override void Execute() =>
             GameState.PlayersInAction.Remove(GameState.PlayerPositions[
-                GameState.TurnPlayer
+                GameState.TurnPosition
             ]);
     }
 }

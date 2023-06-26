@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Camoak.Domain.Poker.Context.State.Cards.Filter;
 
 namespace Camoak.Domain.Poker.Context.State.Cards.Deck
@@ -9,6 +10,10 @@ namespace Camoak.Domain.Poker.Context.State.Cards.Deck
 
         public DeckGenerator(CardFilter filter) => Filter = filter;
 
-        public abstract List<Card> Generate();
+        protected abstract List<Card> CreateCards();
+
+        public List<Card> Generate() => CreateCards()
+            .Where(Filter.AllowThrough)
+            .ToList();
     }
 }

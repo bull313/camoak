@@ -21,7 +21,7 @@ namespace Camoak.Domain.Poker
 
         private int GetTurnIndex() =>
             GameContext.GameState.PlayersInAction[
-                GameContext.GameState.TurnPlayer
+                GameContext.GameState.TurnPosition
             ];
 
         private void CopyPlayerGameState(PokerPlayerActor player, int index)

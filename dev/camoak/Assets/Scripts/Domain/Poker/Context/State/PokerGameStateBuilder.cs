@@ -25,7 +25,7 @@ namespace Camoak.Domain.Poker.Context.State
                 .SetBigBlindSize(gameState.BigBlindSize)
                 .SetPlayerPositions(gameState.PlayerPositions)
                 .SetPlayersInAction(gameState.PlayersInAction)
-                .SetTurnPlayer(gameState.TurnPlayer)
+                .SetTurnPosition(gameState.TurnPosition)
                 .SetCenterPot(gameState.CenterPot)
                 .Build();
 
@@ -63,9 +63,9 @@ namespace Camoak.Domain.Poker.Context.State
             return this;
         }
 
-        public PokerGameStateBuilder SetTurnPlayer(int player)
+        public PokerGameStateBuilder SetTurnPosition(int player)
         {
-            GameState.TurnPlayer = player;
+            GameState.TurnPosition = player;
             return this;
         }
 

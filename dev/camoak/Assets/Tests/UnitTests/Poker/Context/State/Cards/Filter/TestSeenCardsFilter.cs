@@ -20,7 +20,7 @@ namespace Camoak.Tests.UnitTests.Poker.Context.State.Cards.Filter
                     .Copy(PokerCommonGameStates.PreflopBeginningState.Players[0])
                     .SetHoleCards(new()
                     {
-                            Card.KING_OF_DIAMONDS, Card.NINE_OF_DIAMONDS
+                        Card.KING_OF_DIAMONDS, Card.NINE_OF_DIAMONDS
                     })
                     .Build())
                 .SetPlayer(1, PokerPlayerBuilder.Create()

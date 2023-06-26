@@ -23,7 +23,9 @@ namespace Camoak.Tests.AcceptanceTests.Poker
                     .GameWithState(PokerGameStateBuilder.Create()
                         .Copy(PokerCommonGameStates.PreflopBeginningState)
                         .Build())
-                    .WithPlayerActor(new TestPreflopButtonBeginningFoldPlayerActor())
+                    .WithPlayerActor(
+                        new TestPreflopButtonBeginningFoldPlayerActor()
+                    )
                     .WithRefereeActor(new NoLimitHoldemReferee())
                 .When()
                     .TurnPlayerPlays()
@@ -58,7 +60,7 @@ namespace Camoak.Tests.AcceptanceTests.Poker
 
                     .AssertPlayerPositions(new() { 0, 1 })
                     .AssertPlayersInAction(new() { 0, 1 })
-                    .AssertTurnPlayer(1)
+                    .AssertTurnPosition(1)
 
                     .AssertAllElseUnchanged();
         }

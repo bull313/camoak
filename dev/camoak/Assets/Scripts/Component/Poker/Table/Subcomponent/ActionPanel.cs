@@ -13,7 +13,9 @@ namespace Camoak.Component.Poker.Table.Subcomponent
             SelectionTask.Result = new Fold();
 
         private bool IsPlayerTurn() =>
-            GameState.PlayerPositions[GameState.TurnPlayer] == GameState.Player;
+            GameState.PlayerPositions[GameState.TurnPosition]
+            ==
+            GameState.Player;
 
         public override void Notify()
         {

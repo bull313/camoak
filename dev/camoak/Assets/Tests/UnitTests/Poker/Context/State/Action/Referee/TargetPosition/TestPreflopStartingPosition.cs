@@ -5,9 +5,9 @@ using NUnit.Framework;
 
 namespace Camoak.Tests.UnitTests.Poker.Context.State.Action.Referee.TurnPlayerStrategy
 {
-    public class TestPreflopStartingTurn
+    public class TestPreflopStartingPosition
     {
-        private PreflopStartingTurn turnStrategy;
+        private PreflopStartingPosition turnStrategy;
         private PokerGameState gameState;
 
         [SetUp]
@@ -19,10 +19,10 @@ namespace Camoak.Tests.UnitTests.Poker.Context.State.Action.Referee.TurnPlayerSt
             gameState = PokerGameStateBuilder.Create()
                 .Copy(PokerCommonGameStates.PreflopBeginningState)
                 .SetPlayerPositions(new() { 2, 3, 4, 0, 1 })
-                .SetTurnPlayer(0)
+                .SetTurnPosition(0)
                 .Build();
 
-            Assert.AreEqual(2, turnStrategy.GetTurnPlayer(gameState));
+            Assert.AreEqual(2, turnStrategy.GetPosition(gameState));
         }
 
         [Test]
@@ -31,10 +31,10 @@ namespace Camoak.Tests.UnitTests.Poker.Context.State.Action.Referee.TurnPlayerSt
             gameState = PokerGameStateBuilder.Create()
                 .Copy(PokerCommonGameStates.PreflopBeginningState)
                 .SetPlayerPositions(new() { 0, 1 })
-                .SetTurnPlayer(0)
+                .SetTurnPosition(0)
                 .Build();
 
-            Assert.AreEqual(1, turnStrategy.GetTurnPlayer(gameState));
+            Assert.AreEqual(1, turnStrategy.GetPosition(gameState));
         }
     }
 }

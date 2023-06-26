@@ -91,13 +91,13 @@ namespace Camoak.Tests.AcceptanceTests.Poker.Dsl
             return this;
         }
 
-        public PokerTestThenBuilder AssertTurnPlayer(int expected)
+        public PokerTestThenBuilder AssertTurnPosition(int expected)
         {
-            Assert.AreEqual(expected, After.TurnPlayer);
+            Assert.AreEqual(expected, After.TurnPosition);
 
             After = PokerGameStateBuilder.Create()
                 .Copy(After)
-                .SetTurnPlayer(Before.TurnPlayer)
+                .SetTurnPosition(Before.TurnPosition)
                 .Build();
 
             return this;

@@ -32,7 +32,7 @@ namespace Camoak.Tests.Common.Poker
                 .SetBigBlindSize(10)
                 .SetPlayerPositions(new() { 1, 0 })
                 .SetPlayersInAction(new() { 1, 0 })
-                .SetTurnPlayer(1)
+                .SetTurnPosition(1)
                 .SetCenterPot(0f)
                 .Build();
     }

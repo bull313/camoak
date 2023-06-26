@@ -33,7 +33,7 @@ namespace Camoak.Tests.UnitTests.Poker
             {
                 GameState = PokerGameStateBuilder.Create()
                     .SetPlayersInAction(new() { 1, 0 })
-                    .SetTurnPlayer(1)
+                    .SetTurnPosition(1)
                     .Build(),
 
                 ActorContext = new()
@@ -70,7 +70,7 @@ namespace Camoak.Tests.UnitTests.Poker
         }
 
         [Test]
-        public void TestManagerSendsCopyOfGameStateToPlayer()
+        public void TestManagerSendsCopyOfGameStateToAllPlayers()
         {
             gameManager.TurnPlayer = expectedTurnPlayer;
             gameManager.UpdatePlayerGameStates();
@@ -78,6 +78,11 @@ namespace Camoak.Tests.UnitTests.Poker
             Assert.AreEqual(
                 gameContext.GameState.GetHashCode(),
                 expectedTurnPlayer.GameState.GetHashCode()
+            );
+
+            Assert.AreEqual(
+                gameContext.GameState.GetHashCode(),
+                gameContext.ActorContext.Players[1].GameState.GetHashCode()
             );
         }
 

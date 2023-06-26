@@ -19,7 +19,7 @@ namespace Camoak.Component.Poker
         private FilteredPokerGameState HumanGameState;
         private ActionSelectionTask SelectionTask { get; set; }
         public PokerTable Table { get; private set; }
-        public Domain.Poker.PokerGame Game { get; private set; }
+        public PokerGame Game { get; private set; }
 
         public override void Init()
         {
@@ -68,7 +68,6 @@ namespace Camoak.Component.Poker
                 }
             };
 
-            HumanGameState.Player = 0;
             Game.PlayReferee();
         }
 
@@ -110,7 +109,7 @@ namespace Camoak.Component.Poker
         }
     }
 
-    public class PokerFoldBot : PokerPlayerActor
+    internal class PokerFoldBot : PokerPlayerActor
     {
         public PokerFoldBot() : base(new BasicFilteredPokerGameState())
         { }

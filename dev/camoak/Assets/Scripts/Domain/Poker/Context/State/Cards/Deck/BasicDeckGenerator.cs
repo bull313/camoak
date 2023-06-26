@@ -10,12 +10,7 @@ namespace Camoak.Domain.Poker.Context.State.Cards.Deck
         public BasicDeckGenerator(CardFilter filter) : base(filter)
         { }
 
-        private List<Card> GenerateFullDeck() => Enum.GetValues(typeof(Card))
-            .Cast<Card>()
-            .ToList();
-
-        public override List<Card> Generate() => GenerateFullDeck()
-            .Where(Filter.AllowThrough)
-            .ToList();
+        protected override List<Card> CreateCards() =>
+            Enum.GetValues(typeof(Card)).Cast<Card>().ToList();
     }
 }

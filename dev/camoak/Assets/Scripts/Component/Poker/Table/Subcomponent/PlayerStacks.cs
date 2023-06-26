@@ -2,7 +2,7 @@
 
 namespace Camoak.Component.Poker.Table.Subcomponent
 {
-    public class PlayerStacks : PlayerMoneySubComponent
+    public class PlayerStacks : PlayerMoneySubcomponent
     {
         protected override float GetMoney(PokerPlayer player) => player.Stack;
     }

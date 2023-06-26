@@ -11,20 +11,20 @@ namespace Camoak.Tests.UnitTests.Poker.Context.State.Action.Player
     {
         private Fold foldAction;
         private PokerGameState gameState, gameStateCopy;
-        private int turnPlayer;
+        private int turnPosition;
         private List<int> expectedPlayersInAction;
 
         [SetUp]
         public void SetUp()
         {
-            turnPlayer = 1;
+            turnPosition = 1;
             expectedPlayersInAction = new() { 1 };
 
             gameState = PokerGameStateBuilder.Create()
                 .Copy(PokerCommonGameStates.PreflopBeginningState)
                 .SetPlayerPositions(new() { 1, 0 })
                 .SetPlayersInAction(new() { 1, 0 })
-                .SetTurnPlayer(turnPlayer)
+                .SetTurnPosition(turnPosition)
                 .Build();
 
             gameStateCopy = PokerGameStateBuilder.Create()

@@ -60,8 +60,8 @@ namespace Camoak.Tests.UnitTests.Poker.Context.State.Action.Referee
         }
     }
 
-    internal class TestPosition : ITurnPlayerStrategy
+    internal class TestPosition : ITargetPosition
     {
-        public int GetTurnPlayer(PokerGameState gameState) => 1;
+        public int GetPosition(PokerGameState gameState) => 1;
     }
 }

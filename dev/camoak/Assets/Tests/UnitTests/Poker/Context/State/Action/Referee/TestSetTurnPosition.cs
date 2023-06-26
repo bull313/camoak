@@ -6,9 +6,9 @@ using NUnit.Framework;
 
 namespace Camoak.Tests.UnitTests.Poker.Context.State.Action.Referee
 {
-    public class TestSetTurnPlayer
+    public class TestSetTurnPosition
     {
-        private SetTurnPlayer setTurnPlayerAction;
+        private SetTurnPosition setTurnAction;
         private PokerGameState gameState, gameStateCopy;
 
         [SetUp]
@@ -17,28 +17,28 @@ namespace Camoak.Tests.UnitTests.Poker.Context.State.Action.Referee
             gameState = PokerGameStateBuilder.Create()
                 .Copy(PokerCommonGameStates.PreflopBeginningState)
                 .SetPlayerPositions(new() { 1, 2, 3, 4, 0 })
-                .SetTurnPlayer(0)
+                .SetTurnPosition(0)
                 .Build();
 
             gameStateCopy = PokerGameStateBuilder.Create()
                 .Copy(gameState)
                 .Build();
 
-            setTurnPlayerAction = new(new TestNextTurnStrategy());
-            setTurnPlayerAction.GameState = gameState;
-            setTurnPlayerAction.Execute();
+            setTurnAction = new(new TestNextTurnPosition());
+            setTurnAction.GameState = gameState;
+            setTurnAction.Execute();
         }
 
         [Test]
         public void TestNewTurnPlayerIsPlayerAtIndexThree() =>
-            Assert.AreEqual(3, gameState.TurnPlayer);
+            Assert.AreEqual(3, gameState.TurnPosition);
 
         [Test]
         public void TestSetTurnPlayerActionOnlyAffectsTurnPlayer()
         {
             gameState = PokerGameStateBuilder.Create()
                 .Copy(gameState)
-                .SetTurnPlayer(gameStateCopy.TurnPlayer)
+                .SetTurnPosition(gameStateCopy.TurnPosition)
                 .Build();
 
             Assert.AreEqual(
@@ -48,8 +48,8 @@ namespace Camoak.Tests.UnitTests.Poker.Context.State.Action.Referee
         }
     }
 
-    internal class TestNextTurnStrategy : ITurnPlayerStrategy
+    internal class TestNextTurnPosition : ITargetPosition
     {
-        public int GetTurnPlayer(PokerGameState gameState) => 3;
+        public int GetPosition(PokerGameState gameState) => 3;
     }
 }

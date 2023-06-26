@@ -10,7 +10,7 @@ namespace Camoak.Component.Poker.Table.Subcomponent
 
         private string GetCenterPot() =>
             GameState.CenterPot
-                .ToString(PlayerMoneySubComponent.MONETARY_FORMAT);
+                .ToString(PlayerMoneySubcomponent.MONETARY_FORMAT);
 
         public override void Notify() =>
             PotVisual.text = GetCenterPot();
