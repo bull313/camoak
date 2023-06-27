@@ -9,29 +9,43 @@ namespace Camoak.Tests.UnitTests.Poker.Actor
     public class TestNoLimitHoldemReferee
     {
         private NoLimitHoldemReferee referee;
-        private PokerGameState foldedGameState;
+        private PokerGameState gameState;
         private RefereeActionSequence actualSequence;
-        private EndHandActionSequence expectedSequence;
 
-        [SetUp]
-        public void SetUp()
+        [Test]
+        public void TestOnlyOnePlayerInTheHandSelectsHandEndingSequence()
         {
-            expectedSequence = new();
-
-            foldedGameState = PokerGameStateBuilder.Create()
+            gameState = PokerGameStateBuilder.Create()
                 .Copy(PokerCommonGameStates.PreflopBeginningState)
                 .SetPlayersInAction(new() { 1 })
                 .Build();
 
             referee = new();
-            referee.GameState = foldedGameState;
+            referee.GameState = gameState;
             actualSequence = referee.SelectActionSequence();
+
+            Assert.AreEqual(
+                new EndHandActionSequence().GetHashCode(),
+                actualSequence.GetHashCode()
+            );
         }
 
         [Test]
-        public void TestOnlyOnePlayerInTheHandSelectsHandEndingSequence() =>
+        public void TestMultiplePlayersInTheHandSelectsMoveNextTurnSequence()
+        {
+            gameState = PokerGameStateBuilder.Create()
+                .Copy(PokerCommonGameStates.PreflopBeginningState)
+                .SetPlayersInAction(new() { 1, 0 })
+                .Build();
+
+            referee = new();
+            referee.GameState = gameState;
+            actualSequence = referee.SelectActionSequence();
+
             Assert.AreEqual(
-                expectedSequence.GetHashCode(), actualSequence.GetHashCode()
+                new MoveToNextPlayerSequence().GetHashCode(),
+                actualSequence.GetHashCode()
             );
+        }
     }
 }

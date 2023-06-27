@@ -23,9 +23,7 @@ namespace Camoak.Tests.AcceptanceTests.Poker
                     .GameWithState(PokerGameStateBuilder.Create()
                         .Copy(PokerCommonGameStates.PreflopBeginningState)
                         .Build())
-                    .WithPlayerActor(
-                        new TestPreflopButtonBeginningFoldPlayerActor()
-                    )
+                    .WithPlayerActor(new TestPreflopButtonBeginningFoldActor())
                     .WithRefereeActor(new NoLimitHoldemReferee())
                 .When()
                     .TurnPlayerPlays()
@@ -89,9 +87,9 @@ namespace Camoak.Tests.AcceptanceTests.Poker
             );
     }
 
-    internal class TestPreflopButtonBeginningFoldPlayerActor : PokerPlayerActor
+    internal class TestPreflopButtonBeginningFoldActor : PokerPlayerActor
     {
-        public TestPreflopButtonBeginningFoldPlayerActor()
+        public TestPreflopButtonBeginningFoldActor()
             : base(new BasicFilteredPokerGameState())
         { }
 
