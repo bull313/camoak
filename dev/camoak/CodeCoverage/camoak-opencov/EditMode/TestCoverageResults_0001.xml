@@ -1,28 +1,486 @@
 <?xml version="1.0" encoding="utf-8"?>
 <CoverageSession xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="0.0.0.0">
-  <Summary numSequencePoints="3" visitedSequencePoints="3" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0.0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="1" numClasses="1" visitedMethods="1" numMethods="1" />
+  <Summary numSequencePoints="69" visitedSequencePoints="65" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="94.20" branchCoverage="0.0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="8" numClasses="8" visitedMethods="39" numMethods="39" />
   <Modules>
     <Module>
-      <Summary numSequencePoints="3" visitedSequencePoints="3" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0.0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="1" numClasses="1" visitedMethods="1" numMethods="1" />
+      <Summary numSequencePoints="69" visitedSequencePoints="65" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="94.20" branchCoverage="0.0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="8" numClasses="8" visitedMethods="39" numMethods="39" />
       <ModuleTime>0001-01-01T00:00:00</ModuleTime>
-      <ModuleName>Tests</ModuleName>
+      <ModuleName>Domain</ModuleName>
       <Files>
-        <File uid="1" fullPath="/Users/bladick/Desktop/camoak/dev/camoak/Assets/Tests/TestCICD.cs" />
+        <File uid="12" fullPath="/Users/bladick/Desktop/camoak/dev/camoak/Assets/Scripts/Domain/Poker/PokerGame.cs" />
+        <File uid="13" fullPath="/Users/bladick/Desktop/camoak/dev/camoak/Assets/Scripts/Domain/Poker/Context/PokerActorContext.cs" />
+        <File uid="14" fullPath="/Users/bladick/Desktop/camoak/dev/camoak/Assets/Scripts/Domain/Poker/Context/PokerGameContext.cs" />
+        <File uid="15" fullPath="/Users/bladick/Desktop/camoak/dev/camoak/Assets/Scripts/Domain/Poker/Actor/Referee/NoLimitHoldemReferee.cs" />
+        <File uid="16" fullPath="/Users/bladick/Desktop/camoak/dev/camoak/Assets/Scripts/Domain/Poker/Actor/Referee/PokerRefereeActor.cs" />
+        <File uid="17" fullPath="/Users/bladick/Desktop/camoak/dev/camoak/Assets/Scripts/Domain/Poker/Actor/Player/HumanPlayerActor.cs" />
+        <File uid="18" fullPath="/Users/bladick/Desktop/camoak/dev/camoak/Assets/Scripts/Domain/Poker/Actor/Player/PokerPlayerActor.cs" />
+        <File uid="19" fullPath="/Users/bladick/Desktop/camoak/dev/camoak/Assets/Scripts/Domain/Poker/Actor/Player/PokerThinkingBot.cs" />
+        <File uid="20" fullPath="/Users/bladick/Desktop/camoak/dev/camoak/Assets/Scripts/Domain/Poker/Actor/Player/SelectTask/ActionSelectionTask.cs" />
       </Files>
       <Classes>
         <Class>
-          <Summary numSequencePoints="3" visitedSequencePoints="3" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0.0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="1" numClasses="1" visitedMethods="1" numMethods="1" />
-          <FullName>TestCICD</FullName>
+          <Summary numSequencePoints="37" visitedSequencePoints="37" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0.0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="1" numClasses="1" visitedMethods="22" numMethods="22" />
+          <FullName>Camoak.Domain.Poker.PokerGame</FullName>
+          <Methods>
+            <Method visited="true" cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="100.0" branchCoverage="0" crapScore="0" isConstructor="false" isStatic="false" isGetter="true" isSetter="false">
+              <Summary numSequencePoints="1" visitedSequencePoints="1" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663299</MetadataToken>
+              <Name>Camoak.Domain.Poker.Context.PokerGameContext Camoak.Domain.Poker.PokerGame::get_GameContext()</Name>
+              <FileRef uid="12" />
+              <SequencePoints>
+                <SequencePoint vc="34" uspid="1212" ordinal="0" offset="0" sl="14" sc="47" el="14" ec="47" bec="0" bev="0" fileid="12" />
+              </SequencePoints>
+              <BranchPoints />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="100.0" branchCoverage="0" crapScore="0" isConstructor="false" isStatic="false" isGetter="false" isSetter="true">
+              <Summary numSequencePoints="1" visitedSequencePoints="1" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663300</MetadataToken>
+              <Name>System.Void Camoak.Domain.Poker.PokerGame::set_GameContext(Camoak.Domain.Poker.Context.PokerGameContext)</Name>
+              <FileRef uid="12" />
+              <SequencePoints>
+                <SequencePoint vc="16" uspid="1213" ordinal="0" offset="0" sl="14" sc="52" el="14" ec="52" bec="0" bev="0" fileid="12" />
+              </SequencePoints>
+              <BranchPoints />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="100.0" branchCoverage="0" crapScore="0" isConstructor="false" isStatic="false" isGetter="true" isSetter="false">
+              <Summary numSequencePoints="1" visitedSequencePoints="1" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663301</MetadataToken>
+              <Name>Camoak.Domain.Poker.Actor.Player.PokerPlayerActor Camoak.Domain.Poker.PokerGame::get_TurnPlayer()</Name>
+              <FileRef uid="12" />
+              <SequencePoints>
+                <SequencePoint vc="3" uspid="1214" ordinal="0" offset="0" sl="15" sc="46" el="15" ec="46" bec="0" bev="0" fileid="12" />
+              </SequencePoints>
+              <BranchPoints />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="100.0" branchCoverage="0" crapScore="0" isConstructor="false" isStatic="false" isGetter="false" isSetter="true">
+              <Summary numSequencePoints="1" visitedSequencePoints="1" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663302</MetadataToken>
+              <Name>System.Void Camoak.Domain.Poker.PokerGame::set_TurnPlayer(Camoak.Domain.Poker.Actor.Player.PokerPlayerActor)</Name>
+              <FileRef uid="12" />
+              <SequencePoints>
+                <SequencePoint vc="5" uspid="1215" ordinal="0" offset="0" sl="15" sc="51" el="15" ec="51" bec="0" bev="0" fileid="12" />
+              </SequencePoints>
+              <BranchPoints />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="100.0" branchCoverage="0" crapScore="0" isConstructor="false" isStatic="false" isGetter="true" isSetter="false">
+              <Summary numSequencePoints="1" visitedSequencePoints="1" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663303</MetadataToken>
+              <Name>Camoak.Domain.Poker.Actor.Referee.PokerRefereeActor Camoak.Domain.Poker.PokerGame::get_Referee()</Name>
+              <FileRef uid="12" />
+              <SequencePoints>
+                <SequencePoint vc="5" uspid="1216" ordinal="0" offset="0" sl="16" sc="44" el="16" ec="44" bec="0" bev="0" fileid="12" />
+              </SequencePoints>
+              <BranchPoints />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="100.0" branchCoverage="0" crapScore="0" isConstructor="false" isStatic="false" isGetter="false" isSetter="true">
+              <Summary numSequencePoints="1" visitedSequencePoints="1" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663304</MetadataToken>
+              <Name>System.Void Camoak.Domain.Poker.PokerGame::set_Referee(Camoak.Domain.Poker.Actor.Referee.PokerRefereeActor)</Name>
+              <FileRef uid="12" />
+              <SequencePoints>
+                <SequencePoint vc="4" uspid="1217" ordinal="0" offset="0" sl="16" sc="49" el="16" ec="49" bec="0" bev="0" fileid="12" />
+              </SequencePoints>
+              <BranchPoints />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="100.0" branchCoverage="0" crapScore="0" isConstructor="false" isStatic="false" isGetter="true" isSetter="false">
+              <Summary numSequencePoints="1" visitedSequencePoints="1" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663305</MetadataToken>
+              <Name>Camoak.Domain.Poker.Context.State.Action.Player.PlayerAction Camoak.Domain.Poker.PokerGame::get_SelectedPlayerAction()</Name>
+              <FileRef uid="12" />
+              <SequencePoints>
+                <SequencePoint vc="3" uspid="1218" ordinal="0" offset="0" sl="17" sc="52" el="17" ec="52" bec="0" bev="0" fileid="12" />
+              </SequencePoints>
+              <BranchPoints />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="100.0" branchCoverage="0" crapScore="0" isConstructor="false" isStatic="false" isGetter="false" isSetter="true">
+              <Summary numSequencePoints="1" visitedSequencePoints="1" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663306</MetadataToken>
+              <Name>System.Void Camoak.Domain.Poker.PokerGame::set_SelectedPlayerAction(Camoak.Domain.Poker.Context.State.Action.Player.PlayerAction)</Name>
+              <FileRef uid="12" />
+              <SequencePoints>
+                <SequencePoint vc="2" uspid="1219" ordinal="0" offset="0" sl="17" sc="57" el="17" ec="57" bec="0" bev="0" fileid="12" />
+              </SequencePoints>
+              <BranchPoints />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="100.0" branchCoverage="0" crapScore="0" isConstructor="false" isStatic="false" isGetter="true" isSetter="false">
+              <Summary numSequencePoints="1" visitedSequencePoints="1" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663307</MetadataToken>
+              <Name>Camoak.Domain.Poker.Context.State.Action.Referee.Sequence.RefereeActionSequence Camoak.Domain.Poker.PokerGame::get_SelectedRefereeAction()</Name>
+              <FileRef uid="12" />
+              <SequencePoints>
+                <SequencePoint vc="3" uspid="1220" ordinal="0" offset="0" sl="18" sc="62" el="18" ec="62" bec="0" bev="0" fileid="12" />
+              </SequencePoints>
+              <BranchPoints />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="100.0" branchCoverage="0" crapScore="0" isConstructor="false" isStatic="false" isGetter="false" isSetter="true">
+              <Summary numSequencePoints="1" visitedSequencePoints="1" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663308</MetadataToken>
+              <Name>System.Void Camoak.Domain.Poker.PokerGame::set_SelectedRefereeAction(Camoak.Domain.Poker.Context.State.Action.Referee.Sequence.RefereeActionSequence)</Name>
+              <FileRef uid="12" />
+              <SequencePoints>
+                <SequencePoint vc="2" uspid="1221" ordinal="0" offset="0" sl="18" sc="67" el="18" ec="67" bec="0" bev="0" fileid="12" />
+              </SequencePoints>
+              <BranchPoints />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="100.0" branchCoverage="0" crapScore="0" isConstructor="false" isStatic="false" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="1" visitedSequencePoints="1" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663310</MetadataToken>
+              <Name>System.Int32 Camoak.Domain.Poker.PokerGame::GetTurnIndex()</Name>
+              <FileRef uid="12" />
+              <SequencePoints>
+                <SequencePoint vc="2" uspid="1222" ordinal="0" offset="0" sl="23" sc="13" el="23" ec="13" bec="0" bev="0" fileid="12" />
+              </SequencePoints>
+              <BranchPoints />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="100.0" branchCoverage="0" crapScore="0" isConstructor="false" isStatic="false" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="4" visitedSequencePoints="4" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663311</MetadataToken>
+              <Name>System.Void Camoak.Domain.Poker.PokerGame::CopyPlayerGameState(Camoak.Domain.Poker.Actor.Player.PokerPlayerActor, System.Int32)</Name>
+              <FileRef uid="12" />
+              <SequencePoints>
+                <SequencePoint vc="5" uspid="1223" ordinal="0" offset="0" sl="28" sc="9" el="28" ec="9" bec="0" bev="0" fileid="12" />
+                <SequencePoint vc="5" uspid="1224" ordinal="0" offset="1" sl="29" sc="13" el="29" ec="13" bec="0" bev="0" fileid="12" />
+                <SequencePoint vc="5" uspid="1225" ordinal="0" offset="14" sl="31" sc="13" el="31" ec="13" bec="0" bev="0" fileid="12" />
+                <SequencePoint vc="5" uspid="1226" ordinal="0" offset="52" sl="37" sc="9" el="37" ec="9" bec="0" bev="0" fileid="12" />
+              </SequencePoints>
+              <BranchPoints />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="100.0" branchCoverage="0" crapScore="0" isConstructor="false" isStatic="false" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="1" visitedSequencePoints="1" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663312</MetadataToken>
+              <Name>System.Void Camoak.Domain.Poker.PokerGame::CopyGameStateAtIndex(System.Int32)</Name>
+              <FileRef uid="12" />
+              <SequencePoints>
+                <SequencePoint vc="5" uspid="1227" ordinal="0" offset="0" sl="40" sc="13" el="40" ec="13" bec="0" bev="0" fileid="12" />
+              </SequencePoints>
+              <BranchPoints />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="100.0" branchCoverage="0" crapScore="0" isConstructor="false" isStatic="false" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="1" visitedSequencePoints="1" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663313</MetadataToken>
+              <Name>Camoak.Domain.Poker.Actor.Player.PokerPlayerActor Camoak.Domain.Poker.PokerGame::GetTurnPlayer()</Name>
+              <FileRef uid="12" />
+              <SequencePoints>
+                <SequencePoint vc="2" uspid="1228" ordinal="0" offset="0" sl="43" sc="13" el="43" ec="13" bec="0" bev="0" fileid="12" />
+              </SequencePoints>
+              <BranchPoints />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="100.0" branchCoverage="0" crapScore="0" isConstructor="false" isStatic="false" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="1" visitedSequencePoints="1" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663315</MetadataToken>
+              <Name>System.Void Camoak.Domain.Poker.PokerGame::GetReferee()</Name>
+              <FileRef uid="12" />
+              <SequencePoints>
+                <SequencePoint vc="2" uspid="1229" ordinal="0" offset="0" sl="48" sc="37" el="48" ec="37" bec="0" bev="0" fileid="12" />
+              </SequencePoints>
+              <BranchPoints />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="100.0" branchCoverage="0" crapScore="0" isConstructor="false" isStatic="false" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="1" visitedSequencePoints="1" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663316</MetadataToken>
+              <Name>System.Void Camoak.Domain.Poker.PokerGame::GetRefereeActionSequence()</Name>
+              <FileRef uid="12" />
+              <SequencePoints>
+                <SequencePoint vc="2" uspid="1230" ordinal="0" offset="0" sl="51" sc="16" el="51" ec="16" bec="0" bev="0" fileid="12" />
+              </SequencePoints>
+              <BranchPoints />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="100.0" branchCoverage="0" crapScore="0" isConstructor="false" isStatic="false" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="1" visitedSequencePoints="1" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663317</MetadataToken>
+              <Name>System.Void Camoak.Domain.Poker.PokerGame::UpdatePlayerGameStates()</Name>
+              <FileRef uid="12" />
+              <SequencePoints>
+                <SequencePoint vc="3" uspid="1231" ordinal="0" offset="0" sl="54" sc="13" el="54" ec="13" bec="0" bev="0" fileid="12" />
+              </SequencePoints>
+              <BranchPoints />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="100.0" branchCoverage="0" crapScore="0" isConstructor="false" isStatic="false" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="1" visitedSequencePoints="1" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663318</MetadataToken>
+              <Name>System.Void Camoak.Domain.Poker.PokerGame::UpdateRefereeGameState()</Name>
+              <FileRef uid="12" />
+              <SequencePoints>
+                <SequencePoint vc="2" uspid="1232" ordinal="0" offset="0" sl="59" sc="13" el="59" ec="13" bec="0" bev="0" fileid="12" />
+              </SequencePoints>
+              <BranchPoints />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="100.0" branchCoverage="0" crapScore="0" isConstructor="false" isStatic="false" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="4" visitedSequencePoints="4" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663319</MetadataToken>
+              <Name>System.Void Camoak.Domain.Poker.PokerGame::ExecutePlayerAction()</Name>
+              <FileRef uid="12" />
+              <SequencePoints>
+                <SequencePoint vc="1" uspid="1233" ordinal="0" offset="0" sl="65" sc="9" el="65" ec="9" bec="0" bev="0" fileid="12" />
+                <SequencePoint vc="1" uspid="1234" ordinal="0" offset="1" sl="66" sc="13" el="66" ec="13" bec="0" bev="0" fileid="12" />
+                <SequencePoint vc="1" uspid="1235" ordinal="0" offset="24" sl="67" sc="13" el="67" ec="13" bec="0" bev="0" fileid="12" />
+                <SequencePoint vc="1" uspid="1236" ordinal="0" offset="36" sl="68" sc="9" el="68" ec="9" bec="0" bev="0" fileid="12" />
+              </SequencePoints>
+              <BranchPoints />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="100.0" branchCoverage="0" crapScore="0" isConstructor="false" isStatic="false" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="4" visitedSequencePoints="4" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663320</MetadataToken>
+              <Name>System.Void Camoak.Domain.Poker.PokerGame::ExecuteRefereeActionSequence()</Name>
+              <FileRef uid="12" />
+              <SequencePoints>
+                <SequencePoint vc="1" uspid="1237" ordinal="0" offset="0" sl="71" sc="9" el="71" ec="9" bec="0" bev="0" fileid="12" />
+                <SequencePoint vc="1" uspid="1238" ordinal="0" offset="1" sl="72" sc="13" el="72" ec="13" bec="0" bev="0" fileid="12" />
+                <SequencePoint vc="1" uspid="1239" ordinal="0" offset="24" sl="73" sc="13" el="73" ec="13" bec="0" bev="0" fileid="12" />
+                <SequencePoint vc="1" uspid="1240" ordinal="0" offset="36" sl="74" sc="9" el="74" ec="9" bec="0" bev="0" fileid="12" />
+              </SequencePoints>
+              <BranchPoints />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="100.0" branchCoverage="0" crapScore="0" isConstructor="false" isStatic="false" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="6" visitedSequencePoints="6" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663322</MetadataToken>
+              <Name>System.Void Camoak.Domain.Poker.PokerGame::PlayReferee()</Name>
+              <FileRef uid="12" />
+              <SequencePoints>
+                <SequencePoint vc="1" uspid="1241" ordinal="0" offset="0" sl="85" sc="9" el="85" ec="9" bec="0" bev="0" fileid="12" />
+                <SequencePoint vc="1" uspid="1242" ordinal="0" offset="1" sl="86" sc="13" el="86" ec="13" bec="0" bev="0" fileid="12" />
+                <SequencePoint vc="1" uspid="1243" ordinal="0" offset="8" sl="87" sc="13" el="87" ec="13" bec="0" bev="0" fileid="12" />
+                <SequencePoint vc="1" uspid="1244" ordinal="0" offset="15" sl="88" sc="13" el="88" ec="13" bec="0" bev="0" fileid="12" />
+                <SequencePoint vc="1" uspid="1245" ordinal="0" offset="22" sl="89" sc="13" el="89" ec="13" bec="0" bev="0" fileid="12" />
+                <SequencePoint vc="1" uspid="1246" ordinal="0" offset="29" sl="90" sc="9" el="90" ec="9" bec="0" bev="0" fileid="12" />
+              </SequencePoints>
+              <BranchPoints />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="100.0" branchCoverage="0" crapScore="0" isConstructor="true" isStatic="false" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="2" visitedSequencePoints="2" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663309</MetadataToken>
+              <Name>Camoak.Domain.Poker.PokerGame::PokerGame()</Name>
+              <FileRef uid="12" />
+              <SequencePoints>
+                <SequencePoint vc="9" uspid="1247" ordinal="0" offset="0" sl="20" sc="9" el="20" ec="9" bec="0" bev="0" fileid="12" />
+                <SequencePoint vc="9" uspid="1248" ordinal="0" offset="7" sl="20" sc="31" el="20" ec="31" bec="0" bev="0" fileid="12" />
+              </SequencePoints>
+              <BranchPoints />
+            </Method>
+          </Methods>
+        </Class>
+        <Class>
+          <Summary numSequencePoints="6" visitedSequencePoints="6" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0.0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="1" numClasses="1" visitedMethods="5" numMethods="5" />
+          <FullName>Camoak.Domain.Poker.Context.PokerActorContext</FullName>
+          <Methods>
+            <Method visited="true" cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="100.0" branchCoverage="0" crapScore="0" isConstructor="false" isStatic="false" isGetter="true" isSetter="false">
+              <Summary numSequencePoints="1" visitedSequencePoints="1" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663323</MetadataToken>
+              <Name>System.Collections.Generic.List[PokerPlayerActor] Camoak.Domain.Poker.Context.PokerActorContext::get_Players()</Name>
+              <FileRef uid="13" />
+              <SequencePoints>
+                <SequencePoint vc="11" uspid="1249" ordinal="0" offset="0" sl="9" sc="49" el="9" ec="49" bec="0" bev="0" fileid="13" />
+              </SequencePoints>
+              <BranchPoints />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="100.0" branchCoverage="0" crapScore="0" isConstructor="false" isStatic="false" isGetter="false" isSetter="true">
+              <Summary numSequencePoints="1" visitedSequencePoints="1" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663324</MetadataToken>
+              <Name>System.Void Camoak.Domain.Poker.Context.PokerActorContext::set_Players(System.Collections.Generic.List[PokerPlayerActor])</Name>
+              <FileRef uid="13" />
+              <SequencePoints>
+                <SequencePoint vc="30" uspid="1250" ordinal="0" offset="0" sl="9" sc="54" el="9" ec="54" bec="0" bev="0" fileid="13" />
+              </SequencePoints>
+              <BranchPoints />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="100.0" branchCoverage="0" crapScore="0" isConstructor="false" isStatic="false" isGetter="true" isSetter="false">
+              <Summary numSequencePoints="1" visitedSequencePoints="1" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663325</MetadataToken>
+              <Name>Camoak.Domain.Poker.Actor.Referee.PokerRefereeActor Camoak.Domain.Poker.Context.PokerActorContext::get_Referee()</Name>
+              <FileRef uid="13" />
+              <SequencePoints>
+                <SequencePoint vc="2" uspid="1251" ordinal="0" offset="0" sl="10" sc="44" el="10" ec="44" bec="0" bev="0" fileid="13" />
+              </SequencePoints>
+              <BranchPoints />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="100.0" branchCoverage="0" crapScore="0" isConstructor="false" isStatic="false" isGetter="false" isSetter="true">
+              <Summary numSequencePoints="1" visitedSequencePoints="1" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663326</MetadataToken>
+              <Name>System.Void Camoak.Domain.Poker.Context.PokerActorContext::set_Referee(Camoak.Domain.Poker.Actor.Referee.PokerRefereeActor)</Name>
+              <FileRef uid="13" />
+              <SequencePoints>
+                <SequencePoint vc="9" uspid="1252" ordinal="0" offset="0" sl="10" sc="49" el="10" ec="49" bec="0" bev="0" fileid="13" />
+              </SequencePoints>
+              <BranchPoints />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="100.0" branchCoverage="0" crapScore="0" isConstructor="true" isStatic="false" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="2" visitedSequencePoints="2" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663327</MetadataToken>
+              <Name>Camoak.Domain.Poker.Context.PokerActorContext::PokerActorContext()</Name>
+              <FileRef uid="13" />
+              <SequencePoints>
+                <SequencePoint vc="23" uspid="1254" ordinal="0" offset="0" sl="12" sc="9" el="12" ec="9" bec="0" bev="0" fileid="13" />
+                <SequencePoint vc="23" uspid="1255" ordinal="0" offset="7" sl="12" sc="39" el="12" ec="39" bec="0" bev="0" fileid="13" />
+              </SequencePoints>
+              <BranchPoints />
+            </Method>
+          </Methods>
+        </Class>
+        <Class>
+          <Summary numSequencePoints="9" visitedSequencePoints="9" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0.0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="1" numClasses="1" visitedMethods="5" numMethods="5" />
+          <FullName>Camoak.Domain.Poker.Context.PokerGameContext</FullName>
+          <Methods>
+            <Method visited="true" cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="100.0" branchCoverage="0" crapScore="0" isConstructor="false" isStatic="false" isGetter="true" isSetter="false">
+              <Summary numSequencePoints="1" visitedSequencePoints="1" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663329</MetadataToken>
+              <Name>Camoak.Domain.Poker.Context.State.PokerGameState Camoak.Domain.Poker.Context.PokerGameContext::get_GameState()</Name>
+              <FileRef uid="14" />
+              <SequencePoints>
+                <SequencePoint vc="19" uspid="1256" ordinal="0" offset="0" sl="7" sc="43" el="7" ec="43" bec="0" bev="0" fileid="14" />
+              </SequencePoints>
+              <BranchPoints />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="100.0" branchCoverage="0" crapScore="0" isConstructor="false" isStatic="false" isGetter="false" isSetter="true">
+              <Summary numSequencePoints="1" visitedSequencePoints="1" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663330</MetadataToken>
+              <Name>System.Void Camoak.Domain.Poker.Context.PokerGameContext::set_GameState(Camoak.Domain.Poker.Context.State.PokerGameState)</Name>
+              <FileRef uid="14" />
+              <SequencePoints>
+                <SequencePoint vc="25" uspid="1257" ordinal="0" offset="0" sl="7" sc="48" el="7" ec="48" bec="0" bev="0" fileid="14" />
+              </SequencePoints>
+              <BranchPoints />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="100.0" branchCoverage="0" crapScore="0" isConstructor="false" isStatic="false" isGetter="true" isSetter="false">
+              <Summary numSequencePoints="1" visitedSequencePoints="1" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663331</MetadataToken>
+              <Name>Camoak.Domain.Poker.Context.PokerActorContext Camoak.Domain.Poker.Context.PokerGameContext::get_ActorContext()</Name>
+              <FileRef uid="14" />
+              <SequencePoints>
+                <SequencePoint vc="15" uspid="1258" ordinal="0" offset="0" sl="8" sc="49" el="8" ec="49" bec="0" bev="0" fileid="14" />
+              </SequencePoints>
+              <BranchPoints />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="100.0" branchCoverage="0" crapScore="0" isConstructor="false" isStatic="false" isGetter="false" isSetter="true">
+              <Summary numSequencePoints="1" visitedSequencePoints="1" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663332</MetadataToken>
+              <Name>System.Void Camoak.Domain.Poker.Context.PokerGameContext::set_ActorContext(Camoak.Domain.Poker.Context.PokerActorContext)</Name>
+              <FileRef uid="14" />
+              <SequencePoints>
+                <SequencePoint vc="23" uspid="1259" ordinal="0" offset="0" sl="8" sc="54" el="8" ec="54" bec="0" bev="0" fileid="14" />
+              </SequencePoints>
+              <BranchPoints />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="100.0" branchCoverage="0" crapScore="0" isConstructor="true" isStatic="false" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="5" visitedSequencePoints="5" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663333</MetadataToken>
+              <Name>Camoak.Domain.Poker.Context.PokerGameContext::PokerGameContext()</Name>
+              <FileRef uid="14" />
+              <SequencePoints>
+                <SequencePoint vc="16" uspid="1260" ordinal="0" offset="0" sl="10" sc="9" el="10" ec="9" bec="0" bev="0" fileid="14" />
+                <SequencePoint vc="16" uspid="1261" ordinal="0" offset="7" sl="11" sc="9" el="11" ec="9" bec="0" bev="0" fileid="14" />
+                <SequencePoint vc="16" uspid="1262" ordinal="0" offset="8" sl="12" sc="13" el="12" ec="13" bec="0" bev="0" fileid="14" />
+                <SequencePoint vc="16" uspid="1263" ordinal="0" offset="20" sl="13" sc="13" el="13" ec="13" bec="0" bev="0" fileid="14" />
+                <SequencePoint vc="16" uspid="1264" ordinal="0" offset="32" sl="14" sc="9" el="14" ec="9" bec="0" bev="0" fileid="14" />
+              </SequencePoints>
+              <BranchPoints />
+            </Method>
+          </Methods>
+        </Class>
+        <Class>
+          <Summary numSequencePoints="1" visitedSequencePoints="1" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0.0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="1" numClasses="1" visitedMethods="1" numMethods="1" />
+          <FullName>Camoak.Domain.Poker.Actor.Referee.NoLimitHoldemReferee</FullName>
           <Methods>
             <Method visited="true" cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="100.0" branchCoverage="0" crapScore="0" isConstructor="false" isStatic="false" isGetter="false" isSetter="false">
-              <Summary numSequencePoints="3" visitedSequencePoints="3" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
-              <MetadataToken>100663297</MetadataToken>
-              <Name>System.Void TestCICD::Test_Testing_Works()</Name>
-              <FileRef uid="1" />
+              <Summary numSequencePoints="1" visitedSequencePoints="1" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663334</MetadataToken>
+              <Name>Camoak.Domain.Poker.Context.State.Action.Referee.Sequence.RefereeActionSequence Camoak.Domain.Poker.Actor.Referee.NoLimitHoldemReferee::SelectActionSequence()</Name>
+              <FileRef uid="15" />
               <SequencePoints>
-                <SequencePoint vc="1" uspid="4" ordinal="0" offset="0" sl="7" sc="5" el="7" ec="5" bec="0" bev="0" fileid="1" />
-                <SequencePoint vc="1" uspid="5" ordinal="0" offset="1" sl="8" sc="9" el="8" ec="9" bec="0" bev="0" fileid="1" />
-                <SequencePoint vc="1" uspid="6" ordinal="0" offset="19" sl="9" sc="5" el="9" ec="5" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="2" uspid="1265" ordinal="0" offset="0" sl="8" sc="13" el="8" ec="13" bec="0" bev="0" fileid="15" />
+              </SequencePoints>
+              <BranchPoints />
+            </Method>
+          </Methods>
+        </Class>
+        <Class>
+          <Summary numSequencePoints="2" visitedSequencePoints="2" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0.0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="1" numClasses="1" visitedMethods="2" numMethods="2" />
+          <FullName>Camoak.Domain.Poker.Actor.Referee.PokerRefereeActor</FullName>
+          <Methods>
+            <Method visited="true" cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="100.0" branchCoverage="0" crapScore="0" isConstructor="false" isStatic="false" isGetter="true" isSetter="false">
+              <Summary numSequencePoints="1" visitedSequencePoints="1" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663336</MetadataToken>
+              <Name>Camoak.Domain.Poker.Context.State.PokerGameState Camoak.Domain.Poker.Actor.Referee.PokerRefereeActor::get_GameState()</Name>
+              <FileRef uid="16" />
+              <SequencePoints>
+                <SequencePoint vc="1" uspid="1266" ordinal="0" offset="0" sl="8" sc="43" el="8" ec="43" bec="0" bev="0" fileid="16" />
+              </SequencePoints>
+              <BranchPoints />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="100.0" branchCoverage="0" crapScore="0" isConstructor="false" isStatic="false" isGetter="false" isSetter="true">
+              <Summary numSequencePoints="1" visitedSequencePoints="1" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663337</MetadataToken>
+              <Name>System.Void Camoak.Domain.Poker.Actor.Referee.PokerRefereeActor::set_GameState(Camoak.Domain.Poker.Context.State.PokerGameState)</Name>
+              <FileRef uid="16" />
+              <SequencePoints>
+                <SequencePoint vc="3" uspid="1267" ordinal="0" offset="0" sl="8" sc="48" el="8" ec="48" bec="0" bev="0" fileid="16" />
+              </SequencePoints>
+              <BranchPoints />
+            </Method>
+          </Methods>
+        </Class>
+        <Class>
+          <Summary numSequencePoints="3" visitedSequencePoints="3" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0.0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="1" numClasses="1" visitedMethods="2" numMethods="2" />
+          <FullName>Camoak.Domain.Poker.Actor.Player.PokerPlayerActor</FullName>
+          <Methods>
+            <Method visited="true" cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="100.0" branchCoverage="0" crapScore="0" isConstructor="false" isStatic="false" isGetter="true" isSetter="false">
+              <Summary numSequencePoints="1" visitedSequencePoints="1" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663344</MetadataToken>
+              <Name>Camoak.Domain.Poker.Context.State.Filter.FilteredPokerGameState Camoak.Domain.Poker.Actor.Player.PokerPlayerActor::get_GameState()</Name>
+              <FileRef uid="18" />
+              <SequencePoints>
+                <SequencePoint vc="12" uspid="1272" ordinal="0" offset="0" sl="9" sc="59" el="9" ec="59" bec="0" bev="0" fileid="18" />
+              </SequencePoints>
+              <BranchPoints />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="100.0" branchCoverage="0" crapScore="0" isConstructor="true" isStatic="false" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="2" visitedSequencePoints="2" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663345</MetadataToken>
+              <Name>Camoak.Domain.Poker.Actor.Player.PokerPlayerActor::PokerPlayerActor(Camoak.Domain.Poker.Context.State.Filter.FilteredPokerGameState)</Name>
+              <FileRef uid="18" />
+              <SequencePoints>
+                <SequencePoint vc="15" uspid="1273" ordinal="0" offset="0" sl="11" sc="9" el="11" ec="9" bec="0" bev="0" fileid="18" />
+                <SequencePoint vc="15" uspid="1274" ordinal="0" offset="7" sl="12" sc="13" el="12" ec="13" bec="0" bev="0" fileid="18" />
+              </SequencePoints>
+              <BranchPoints />
+            </Method>
+          </Methods>
+        </Class>
+        <Class>
+          <Summary numSequencePoints="3" visitedSequencePoints="1" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="33.33" branchCoverage="0.0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="1" numClasses="1" visitedMethods="1" numMethods="1" />
+          <FullName>Camoak.Domain.Poker.PokerGame/&lt;GetPlayerAction&gt;d__25</FullName>
+          <Methods>
+            <Method visited="true" cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="33.33" branchCoverage="0" crapScore="0" isConstructor="false" isStatic="false" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="3" visitedSequencePoints="1" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="33.33" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663363</MetadataToken>
+              <Name>System.Void Camoak.Domain.Poker.PokerGame/&lt;GetPlayerAction&gt;d__25::MoveNext()</Name>
+              <FileRef uid="12" />
+              <SequencePoints>
+                <SequencePoint vc="2" uspid="1294" ordinal="0" offset="14" sl="46" sc="13" el="46" ec="13" bec="0" bev="0" fileid="12" />
+                <SequencePoint vc="0" uspid="1295" ordinal="0" offset="54" sl="46" sc="13" el="46" ec="13" bec="0" bev="0" fileid="12" />
+                <SequencePoint vc="0" uspid="1296" ordinal="0" offset="81" sl="46" sc="13" el="46" ec="13" bec="0" bev="0" fileid="12" />
+              </SequencePoints>
+              <BranchPoints />
+            </Method>
+          </Methods>
+        </Class>
+        <Class>
+          <Summary numSequencePoints="8" visitedSequencePoints="6" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="75.00" branchCoverage="0.0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="1" numClasses="1" visitedMethods="1" numMethods="1" />
+          <FullName>Camoak.Domain.Poker.PokerGame/&lt;PlayTurnPlayer&gt;d__32</FullName>
+          <Methods>
+            <Method visited="true" cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="75.00" branchCoverage="0" crapScore="0" isConstructor="false" isStatic="false" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="8" visitedSequencePoints="6" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="75.00" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663366</MetadataToken>
+              <Name>System.Void Camoak.Domain.Poker.PokerGame/&lt;PlayTurnPlayer&gt;d__32::MoveNext()</Name>
+              <FileRef uid="12" />
+              <SequencePoints>
+                <SequencePoint vc="1" uspid="1297" ordinal="0" offset="14" sl="77" sc="9" el="77" ec="9" bec="0" bev="0" fileid="12" />
+                <SequencePoint vc="1" uspid="1298" ordinal="0" offset="15" sl="78" sc="13" el="78" ec="13" bec="0" bev="0" fileid="12" />
+                <SequencePoint vc="1" uspid="1299" ordinal="0" offset="27" sl="79" sc="13" el="79" ec="13" bec="0" bev="0" fileid="12" />
+                <SequencePoint vc="1" uspid="1300" ordinal="0" offset="39" sl="80" sc="13" el="80" ec="13" bec="0" bev="0" fileid="12" />
+                <SequencePoint vc="0" uspid="1301" ordinal="0" offset="74" sl="80" sc="13" el="80" ec="13" bec="0" bev="0" fileid="12" />
+                <SequencePoint vc="0" uspid="1302" ordinal="0" offset="101" sl="80" sc="13" el="80" ec="13" bec="0" bev="0" fileid="12" />
+                <SequencePoint vc="1" uspid="1303" ordinal="0" offset="137" sl="81" sc="13" el="81" ec="13" bec="0" bev="0" fileid="12" />
+                <SequencePoint vc="1" uspid="1304" ordinal="0" offset="175" sl="82" sc="9" el="82" ec="9" bec="0" bev="0" fileid="12" />
               </SequencePoints>
               <BranchPoints />
             </Method>

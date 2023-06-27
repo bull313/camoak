@@ -1,24 +1,45 @@
 {
   "summary": {
-    "generatedon": "2023-06-02T22:17:27Z",
-    "parser": "MultiReportParser (2x OpenCoverParser)",
-    "assemblies": 1,
-    "classes": 1,
-    "files": 1,
-    "coveredlines": 3,
-    "uncoveredlines": 0,
-    "coverablelines": 3,
-    "totallines": 10,
-    "linecoverage": 100,
+    "generatedon": "2023-06-26T08:39:08Z",
+    "parser": "MultiReportParser (4x OpenCoverParser)",
+    "assemblies": 2,
+    "classes": 21,
+    "files": 20,
+    "coveredlines": 179,
+    "uncoveredlines": 1,
+    "coverablelines": 180,
+    "totallines": 606,
+    "linecoverage": 99.4,
     "coveredbranches": 0,
     "totalbranches": 0,
-    "coveredmethods": 1,
-    "totalmethods": 1,
-    "methodcoverage": 100
+    "coveredmethods": 132,
+    "totalmethods": 133,
+    "methodcoverage": 99.2
  },
   "coverage": {
     "assemblies": [
-      { "name": "Tests", "classes": 1, "coverage": 100, "coveredlines": 3, "coverablelines": 3, "totallines": 10, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 100, "coveredmethods": 1, "totalmethods": 1, "classesinassembly": [
-        { "name": "TestCICD", "coverage": 100, "coveredlines": 3, "coverablelines": 3, "totallines": 10, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 100, "coveredmethods": 1, "totalmethods": 1 } ] } ]
+      { "name": "Component", "classes": 12, "coverage": 100, "coveredlines": 101, "coverablelines": 101, "totallines": 482, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 100, "coveredmethods": 74, "totalmethods": 74, "classesinassembly": [
+        { "name": "Camoak.Component.Game.GameManagerComponent", "coverage": 100, "coveredlines": 6, "coverablelines": 6, "totallines": 17, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 100, "coveredmethods": 4, "totalmethods": 4 },
+        { "name": "Camoak.Component.Poker.PokerFoldBot", "coverage": 100, "coveredlines": 3, "coverablelines": 3, "totallines": 121, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 100, "coveredmethods": 2, "totalmethods": 2 },
+        { "name": "Camoak.Component.Poker.PokerGameComponent", "coverage": 100, "coveredlines": 38, "coverablelines": 38, "totallines": 121, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 100, "coveredmethods": 14, "totalmethods": 14 },
+        { "name": "Camoak.Component.Poker.Table.PokerTable", "coverage": 100, "coveredlines": 13, "coverablelines": 13, "totallines": 31, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 100, "coveredmethods": 10, "totalmethods": 10 },
+        { "name": "Camoak.Component.Poker.Table.Subcomponent.ActionPanel", "coverage": 100, "coveredlines": 9, "coverablelines": 9, "totallines": 25, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 100, "coveredmethods": 6, "totalmethods": 6 },
+        { "name": "Camoak.Component.Poker.Table.Subcomponent.CenterPot", "coverage": 100, "coveredlines": 4, "coverablelines": 4, "totallines": 18, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 100, "coveredmethods": 5, "totalmethods": 5 },
+        { "name": "Camoak.Component.Poker.Table.Subcomponent.PlayerActions", "coverage": 100, "coveredlines": 1, "coverablelines": 1, "totallines": 9, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 100, "coveredmethods": 1, "totalmethods": 1 },
+        { "name": "Camoak.Component.Poker.Table.Subcomponent.PlayerHoleCards", "coverage": 100, "coveredlines": 11, "coverablelines": 11, "totallines": 49, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 100, "coveredmethods": 12, "totalmethods": 12 },
+        { "name": "Camoak.Component.Poker.Table.Subcomponent.PlayerMoneySubComponent", "coverage": 100, "coveredlines": 7, "coverablelines": 7, "totallines": 40, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 100, "coveredmethods": 8, "totalmethods": 8 },
+        { "name": "Camoak.Component.Poker.Table.Subcomponent.PlayerPositions", "coverage": 100, "coveredlines": 6, "coverablelines": 6, "totallines": 28, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 100, "coveredmethods": 7, "totalmethods": 7 },
+        { "name": "Camoak.Component.Poker.Table.Subcomponent.PlayerStacks", "coverage": 100, "coveredlines": 1, "coverablelines": 1, "totallines": 9, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 100, "coveredmethods": 1, "totalmethods": 1 },
+        { "name": "Camoak.Component.Poker.Table.Subcomponent.TableSubcomponent", "coverage": 100, "coveredlines": 2, "coverablelines": 2, "totallines": 14, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 100, "coveredmethods": 4, "totalmethods": 4 } ] },
+      { "name": "Domain", "classes": 9, "coverage": 98.7, "coveredlines": 78, "coverablelines": 79, "totallines": 245, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 98.3, "coveredmethods": 58, "totalmethods": 59, "classesinassembly": [
+        { "name": "Camoak.Domain.Poker.Actor.Player.HumanPlayerActor", "coverage": 100, "coveredlines": 6, "coverablelines": 6, "totallines": 21, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 100, "coveredmethods": 4, "totalmethods": 4 },
+        { "name": "Camoak.Domain.Poker.Actor.Player.PokerPlayerActor", "coverage": 100, "coveredlines": 3, "coverablelines": 3, "totallines": 16, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 100, "coveredmethods": 2, "totalmethods": 2 },
+        { "name": "Camoak.Domain.Poker.Actor.Player.PokerThinkingBot", "coverage": 100, "coveredlines": 13, "coverablelines": 13, "totallines": 37, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 100, "coveredmethods": 8, "totalmethods": 8 },
+        { "name": "Camoak.Domain.Poker.Actor.Player.SelectTask.ActionSelectionTask", "coverage": 100, "coveredlines": 6, "coverablelines": 6, "totallines": 23, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 100, "coveredmethods": 7, "totalmethods": 7 },
+        { "name": "Camoak.Domain.Poker.Actor.Referee.NoLimitHoldemReferee", "coverage": 100, "coveredlines": 1, "coverablelines": 1, "totallines": 10, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 100, "coveredmethods": 1, "totalmethods": 1 },
+        { "name": "Camoak.Domain.Poker.Actor.Referee.PokerRefereeActor", "coverage": 100, "coveredlines": 1, "coverablelines": 1, "totallines": 12, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 100, "coveredmethods": 2, "totalmethods": 2 },
+        { "name": "Camoak.Domain.Poker.Context.PokerActorContext", "coverage": 75, "coveredlines": 3, "coverablelines": 4, "totallines": 18, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 83.3, "coveredmethods": 5, "totalmethods": 6 },
+        { "name": "Camoak.Domain.Poker.Context.PokerGameContext", "coverage": 100, "coveredlines": 7, "coverablelines": 7, "totallines": 16, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 100, "coveredmethods": 5, "totalmethods": 5 },
+        { "name": "Camoak.Domain.Poker.PokerGame", "coverage": 100, "coveredlines": 38, "coverablelines": 38, "totallines": 92, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 100, "coveredmethods": 24, "totalmethods": 24 } ] } ]
   }
 }

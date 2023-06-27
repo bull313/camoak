@@ -1,0 +1,17 @@
+{
+    "name": "Common",
+    "rootNamespace": "",
+    "references": [
+        "GUID:87e88c9bdb5a84cb28a51d400a4658ac",
+        "GUID:e926708cd2ff849ccbfd7683b71da115"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
