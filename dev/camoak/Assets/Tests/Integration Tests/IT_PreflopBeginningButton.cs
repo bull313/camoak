@@ -11,7 +11,7 @@ using UnityEngine.UI;
 
 namespace Camoak.Tests.IntegrationTests
 {
-    public class IT_PreflopBeginningButtonFold
+    public class IT_PreflopBeginningButton
     {
         private GameObject gameManager;
         private PokerGameComponent pokerComponent;

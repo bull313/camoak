@@ -4,7 +4,7 @@ using Camoak.Domain.Poker.Context.State.Action.Referee.Sequence;
 using Camoak.Tests.Common.Poker;
 using NUnit.Framework;
 
-namespace Camoak.Tests.UnitTests.Poker.Actor
+namespace Camoak.Tests.UnitTests.Poker.Actor.Referee
 {
     public class TestNoLimitHoldemReferee
     {

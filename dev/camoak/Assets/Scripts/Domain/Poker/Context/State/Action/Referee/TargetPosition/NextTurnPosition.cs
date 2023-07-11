@@ -4,16 +4,20 @@ namespace Camoak.Domain.Poker.Context.State.Action.Referee.TurnPlayerStrategy.Tu
 {
     public class NextTurnPosition : ITargetPosition
     {
-        private bool PlayerInAction(PokerGameState gameState) =>
+        private const int DO_NOT_SHIFT = 0;
+        private const int SHIFT = 1;
+
+        private bool IsPlayerInAction(PokerGameState gameState) =>
             new HashSet<int>(gameState.PlayersInAction).Contains(
                 gameState.PlayerPositions[gameState.TurnPosition]
             );
 
-        private int GetIncrementedTurnPlayer(PokerGameState gameState) =>
-            gameState.TurnPosition + (PlayerInAction(gameState) ? 1 : 0);
+        private int GetNewTurnPosition(PokerGameState gameState) =>
+            gameState.TurnPosition +
+                (IsPlayerInAction(gameState) ? SHIFT : DO_NOT_SHIFT);
 
         public int GetPosition(PokerGameState gameState) =>
-            GetIncrementedTurnPlayer(gameState)
+            GetNewTurnPosition(gameState)
                 % gameState.PlayersInAction.Count;
             
     }

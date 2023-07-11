@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Camoak.Domain.Poker;
 using Camoak.Domain.Poker.Actor.Player;
 using Camoak.Domain.Poker.Actor.Referee;
+using Camoak.Domain.Poker.Actor.Referee.Schema;
 using Camoak.Domain.Poker.Context;
 using Camoak.Domain.Poker.Context.State;
 using Camoak.Domain.Poker.Context.State.Action.Player;
@@ -145,17 +146,16 @@ namespace Camoak.Tests.UnitTests.Poker
     {
         private readonly RefereeActionSequence sequence;
 
+        protected override List<IGameStateCheck> GameChecks => new();
+
+        protected override LogicSchema GameLogicSchema
+            => new(
+                new KeyValuePair<List<bool?>, RefereeActionSequence>(
+                    new() { null }, sequence
+                )
+            );
+
         public TestReferee(RefereeActionSequence seq) =>
             sequence = seq;
-
-        protected override List<IGameStateCheck> InitGameChecks() => new()
-        { };
-
-        protected override
-            List<KeyValuePair<List<bool?>, RefereeActionSequence>>
-                GetLogicMap() => new()
-                {
-                    new(new() { null }, sequence)
-                };
     }
 }
