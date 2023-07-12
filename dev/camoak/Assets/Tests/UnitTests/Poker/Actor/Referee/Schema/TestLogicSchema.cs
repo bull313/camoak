@@ -13,9 +13,6 @@ namespace Camoak.Tests.UnitTests.Poker.Actor.Referee.Schema
         private LogicSchema schema;
         private List<IGameStateCheck> checks;
 
-        [SetUp]
-        public void SetUp() => schema = new();
-
         [Test]
         public void TestTrueActionSequenceIsReturnedWhenCheckIsSatisfied()
         {

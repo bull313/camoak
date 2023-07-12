@@ -155,7 +155,6 @@ namespace Camoak.Tests.UnitTests.Poker
                 )
             );
 
-        public TestReferee(RefereeActionSequence seq) =>
-            sequence = seq;
+        public TestReferee(RefereeActionSequence seq) => sequence = seq;
     }
 }
