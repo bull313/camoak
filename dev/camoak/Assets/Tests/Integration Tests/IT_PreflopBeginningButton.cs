@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using Camoak.Component.Poker;
 using Camoak.Component.Poker.Table;
 using Camoak.Component.Poker.Table.Subcomponent;
@@ -10,13 +11,13 @@ using UnityEngine.UI;
 
 namespace Camoak.Tests.IntegrationTests
 {
-    public class IT_PreflopBeginningButtonFold
+    public class IT_PreflopBeginningButton
     {
         private GameObject gameManager;
         private PokerGameComponent pokerComponent;
         private PokerTable pokerTable;
         private ActionPanel actionPanel;
-        private Button foldButton;
+        private List<Button> buttons;
 
         [UnityTest]
         public IEnumerator IT_SceneLoadsWithProperComponents_AndDoesntCrash()
@@ -27,7 +28,7 @@ namespace Camoak.Tests.IntegrationTests
             pokerComponent = gameManager.GetComponent<PokerGameComponent>();
             pokerTable = pokerComponent.Table;
             actionPanel = pokerTable.gameObject.GetComponentInChildren<ActionPanel>();
-            foldButton = actionPanel.FoldButton;
+            buttons = actionPanel.Buttons;
 
             Assert.IsNotNull(gameManager);
             Assert.IsNotNull(pokerComponent);
@@ -38,14 +39,17 @@ namespace Camoak.Tests.IntegrationTests
             Assert.IsNotNull(pokerTable.gameObject.GetComponentInChildren<PlayerHoleCards>());
             Assert.IsNotNull(pokerTable.gameObject.GetComponentInChildren<PlayerPositions>());
             Assert.IsNotNull(pokerTable.gameObject.GetComponentInChildren<PlayerStacks>());
-            Assert.IsNotNull(foldButton);
+            Assert.AreEqual(2, buttons.Count);
 
             yield return GameTestSetup.WAIT_SINGLE_FRAME;
             yield return GameTestSetup.WAIT_SINGLE_FRAME;
             yield return GameTestSetup.WAIT_SINGLE_FRAME;
 
-            foldButton.onClick.Invoke();
-            yield return new WaitForSeconds(3f);
+            for (int i = 0; i < buttons.Count; i++)
+            {
+                buttons[i].onClick.Invoke();
+                yield return new WaitForSeconds(3f);
+            }
         }
     }
 }

@@ -24,7 +24,7 @@ namespace Camoak.Tests.UnitTests.Poker.Context.State.Action.Referee
                 .Copy(gameState)
                 .Build();
 
-            setTurnAction = new(new TestNextTurnPosition());
+            setTurnAction = new(new TestTurnPosition());
             setTurnAction.GameState = gameState;
             setTurnAction.Execute();
         }
@@ -48,7 +48,7 @@ namespace Camoak.Tests.UnitTests.Poker.Context.State.Action.Referee
         }
     }
 
-    internal class TestNextTurnPosition : ITargetPosition
+    internal class TestTurnPosition : ITargetPosition
     {
         public int GetPosition(PokerGameState gameState) => 3;
     }

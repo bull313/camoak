@@ -1,10 +1,13 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using Camoak.Domain.Poker;
 using Camoak.Domain.Poker.Actor.Player;
 using Camoak.Domain.Poker.Actor.Referee;
+using Camoak.Domain.Poker.Actor.Referee.Schema;
 using Camoak.Domain.Poker.Context;
 using Camoak.Domain.Poker.Context.State;
 using Camoak.Domain.Poker.Context.State.Action.Player;
+using Camoak.Domain.Poker.Context.State.Action.Referee.GameStateCheck;
 using Camoak.Domain.Poker.Context.State.Action.Referee.Sequence;
 using Camoak.Domain.Poker.Context.State.Filter;
 using NUnit.Framework;
@@ -27,7 +30,7 @@ namespace Camoak.Tests.UnitTests.Poker
             expectedRefSequence =
                 new EndHandActionSequence();
             expectedTurnPlayer = new TestPokerPlayerActor(expectedPlayerAction);
-            expectedReferee = new TestPokerRefereeActor(expectedRefSequence);
+            expectedReferee = new TestReferee(expectedRefSequence);
 
             gameContext = new()
             {
@@ -139,14 +142,19 @@ namespace Camoak.Tests.UnitTests.Poker
             Task.FromResult(action);
     }
 
-    internal class TestPokerRefereeActor : PokerRefereeActor
+    internal class TestReferee : PokerRefereeActor
     {
         private readonly RefereeActionSequence sequence;
 
-        public TestPokerRefereeActor(RefereeActionSequence seq) =>
-            sequence = seq;
+        protected override List<IGameStateCheck> GameChecks => new();
 
-        public override RefereeActionSequence SelectActionSequence() =>
-            sequence;
+        protected override LogicSchema GameLogicSchema
+            => new(
+                new KeyValuePair<List<bool?>, RefereeActionSequence>(
+                    new() { null }, sequence
+                )
+            );
+
+        public TestReferee(RefereeActionSequence seq) => sequence = seq;
     }
 }

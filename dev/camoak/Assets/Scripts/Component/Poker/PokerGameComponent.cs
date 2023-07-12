@@ -51,7 +51,7 @@ namespace Camoak.Component.Poker
                         })
                         .SetBigBlindSize(10)
                         .SetPlayerPositions(new() { 0, 1 })
-                        .SetPlayersInAction(new() { 0, 1 })
+                        .SetPlayersInAction(new() { 1 })
                         .SetCenterPot(0f)
                         .Build(),
 
