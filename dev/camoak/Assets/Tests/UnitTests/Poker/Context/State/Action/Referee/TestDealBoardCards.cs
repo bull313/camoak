@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using Camoak.Domain.Poker.Context.State;
 using Camoak.Domain.Poker.Context.State.Action.Referee;
@@ -12,25 +12,20 @@ using NUnit.Framework;
 
 namespace Camoak.Tests.UnitTests.Poker.Context.State.Action.Referee
 {
-    public class TestDealHoleCards
+    public class TestDealBoardCards
     {
-        private DealHoleCards dealAction;
+        private DealBoardCards dealAction;
         private PokerGameState gameState, gameStateCopy;
-        private List<Card> expectedPlayer1Cards, expectedPlayer2Cards;
+        private List<Card> expectedBoardCards;
 
         [SetUp]
         public void SetUp()
         {
-            expectedPlayer1Cards = new()
+            expectedBoardCards = new()
             {
-                Card.ACE_OF_DIAMONDS,
-                Card.TWO_OF_DIAMONDS
-            };
-
-            expectedPlayer2Cards = new()
-            {
-                Card.FIVE_OF_HEARTS,
-                Card.SIX_OF_DIAMONDS
+                Card.TEN_OF_SPADES,
+                Card.TWO_OF_CLUBS,
+                Card.QUEEN_OF_SPADES
             };
 
             gameState = PokerGameStateBuilder.Create()
@@ -50,10 +45,10 @@ namespace Camoak.Tests.UnitTests.Poker.Context.State.Action.Referee
                 .Build();
 
             dealAction = new(
-                2,
+                3,
                 new CardDealer(
                     new BasicDeckGenerator(new SeenCardsFilter()),
-                    new TestDealHoleCardsSelector()
+                    new TestDealBoardCardsSelector()
                 )
             );
 
@@ -62,17 +57,11 @@ namespace Camoak.Tests.UnitTests.Poker.Context.State.Action.Referee
         }
 
         [Test]
-        public void TestFourPlayerHoleCardsAreDealtToPlayers()
+        public void TestBoardCardsAreDealt()
         {
             Assert.IsTrue(
-                expectedPlayer1Cards.SequenceEqual(
-                    gameState.Players[0].HoleCards
-                )
-            );
-
-            Assert.IsTrue(
-                expectedPlayer2Cards.SequenceEqual(
-                    gameState.Players[1].HoleCards
+                expectedBoardCards.SequenceEqual(
+                    gameState.BoardCards
                 )
             );
         }
@@ -82,14 +71,7 @@ namespace Camoak.Tests.UnitTests.Poker.Context.State.Action.Referee
         {
             gameState = PokerGameStateBuilder.Create()
                 .Copy(gameState)
-                .SetPlayer(0, PokerPlayerBuilder.Create()
-                    .Copy(gameState.Players[0])
-                    .SetHoleCards(gameStateCopy.Players[0].HoleCards)
-                    .Build())
-                .SetPlayer(1, PokerPlayerBuilder.Create()
-                    .Copy(gameState.Players[1])
-                    .SetHoleCards(gameStateCopy.Players[1].HoleCards)
-                    .Build())
+                .SetBoardCards(gameStateCopy.BoardCards)
                 .Build();
 
             Assert.AreEqual(
@@ -99,20 +81,20 @@ namespace Camoak.Tests.UnitTests.Poker.Context.State.Action.Referee
         }
     }
 
-    internal class TestDealHoleCardsSelector : ICardSelector
+    internal class TestDealBoardCardsSelector : ICardSelector
     {
         private int counter;
         private readonly Card[] dealCards;
 
-        public TestDealHoleCardsSelector()
+        public TestDealBoardCardsSelector()
         {
             counter = 0;
             dealCards = new Card[]
             {
-                Card.ACE_OF_DIAMONDS,
-                Card.TWO_OF_DIAMONDS,
-                Card.FIVE_OF_HEARTS,
-                Card.SIX_OF_DIAMONDS
+                Card.TEN_OF_SPADES,
+                Card.TWO_OF_CLUBS,
+                Card.QUEEN_OF_SPADES,
+                Card.ACE_OF_HEARTS
             };
         }
 

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Camoak.Domain.Poker.Context.State.Cards;
 
 namespace Camoak.Domain.Poker.Context.State
 {
@@ -27,6 +28,7 @@ namespace Camoak.Domain.Poker.Context.State
                 .SetPlayersInAction(gameState.PlayersInAction)
                 .SetTurnPosition(gameState.TurnPosition)
                 .SetCenterPot(gameState.CenterPot)
+                .SetBoardCards(gameState.BoardCards)
                 .Build();
 
             return this;
@@ -72,6 +74,12 @@ namespace Camoak.Domain.Poker.Context.State
         public PokerGameStateBuilder SetCenterPot(float pot)
         {
             GameState.CenterPot = pot;
+            return this;
+        }
+
+        public PokerGameStateBuilder SetBoardCards(List<Card> boardCards)
+        {
+            GameState.BoardCards = new(boardCards);
             return this;
         }
 

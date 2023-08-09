@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Camoak.Domain.Poker.Context.State.Cards;
 
 namespace Camoak.Domain.Poker.Context.State
 {
@@ -11,12 +12,14 @@ namespace Camoak.Domain.Poker.Context.State
         public List<int> PlayersInAction { get; internal set; }
         public int TurnPosition { get; internal set; }
         public float CenterPot { get; internal set; }
+        public List<Card> BoardCards { get; internal set; }
 
         public PokerGameState()
         {
             Players = new();
             PlayerPositions = new();
             PlayersInAction = new();
+            BoardCards = new();
         }
 
         private int GetPlayerHashCode(PokerPlayer player) => 
@@ -29,6 +32,7 @@ namespace Camoak.Domain.Poker.Context.State
                 + $"{string.Join("", PlayersInAction.ToArray())}"
                 + $"{TurnPosition}"
                 + $"{CenterPot}"
+                + $"{string.Join("", BoardCards.ToArray())}"
                 ).GetHashCode();
     }
 }

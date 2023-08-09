@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Threading;
+using System.Threading.Tasks;
 using Camoak.Component.Poker.Table;
 using Camoak.Domain.Poker;
 using Camoak.Domain.Poker.Actor.Player;
@@ -60,7 +61,7 @@ namespace Camoak.Component.Poker
                         Players = new()
                         {
                             new HumanPlayerActor(HumanGameState, SelectionTask),
-                            new PokerThinkingBot(new PokerFoldBot())
+                            new PokerThinkingBot(new BasicPokerBot())
                         },
 
                         Referee = new NoLimitHoldemReferee()
@@ -89,6 +90,45 @@ namespace Camoak.Component.Poker
             Table.UpdateView();
         }
 
+        private void ResetGame()
+        {
+            Game = new()
+            {
+                GameContext = new()
+                {
+                    GameState = PokerGameStateBuilder.Create()
+                        .SetPlayers(new()
+                        {
+                            PokerPlayerBuilder.Create()
+                                .SetStack(100f)
+                                .Build(),
+
+                            PokerPlayerBuilder.Create()
+                                .SetStack(100f)
+                                .Build()
+                        })
+                        .SetBigBlindSize(10)
+                        .SetPlayerPositions(new() { 0, 1 })
+                        .SetPlayersInAction(new() { 1 })
+                        .SetCenterPot(0f)
+                        .Build(),
+
+                    ActorContext = new()
+                    {
+                        Players = new()
+                        {
+                            new HumanPlayerActor(HumanGameState, SelectionTask),
+                            new PokerThinkingBot(new BasicPokerBot())
+                        },
+
+                        Referee = new NoLimitHoldemReferee()
+                    }
+                }
+            };
+
+            Game.PlayReferee();
+        }
+
         private async Task PlayATurn()
         {
             GameIdle = false;
@@ -96,9 +136,18 @@ namespace Camoak.Component.Poker
             UpdatePlayers();
             UpdateTable();
 
-            await Game.GetPlayerAction();
+            /* Temporarily resets game until more features come out */
+            if (Game.GameContext.GameState.BoardCards.Count > 0)
+            {
+                await Task.Run(() => Thread.Sleep(500));
+                ResetGame();
+            }
+            else
+            {
+                await Game.GetPlayerAction();
 
-            UpdateGameState();
+                UpdateGameState();
+            }
 
             GameIdle = true;
         }
@@ -109,12 +158,15 @@ namespace Camoak.Component.Poker
         }
     }
 
-    internal class PokerFoldBot : PokerPlayerActor
+    internal class BasicPokerBot : PokerPlayerActor
     {
-        public PokerFoldBot() : base(new BasicFilteredPokerGameState())
+        public BasicPokerBot() : base(new BasicFilteredPokerGameState())
         { }
 
         public override Task<PlayerAction> SelectAction() =>
-            Task.FromResult<PlayerAction>(new Fold());
+            GameState.TurnPosition == 0 ?
+            Task.FromResult<PlayerAction>(new Check())
+            :
+            Task.FromResult<PlayerAction>(new Call());
     }
 }

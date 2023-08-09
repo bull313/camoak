@@ -12,6 +12,7 @@ namespace Camoak.Domain.Poker.Context.State.Filter
             PlayersInAction = gameState.PlayersInAction;
             TurnPosition = gameState.TurnPosition;
             CenterPot = gameState.CenterPot;
+            BoardCards = gameState.BoardCards;
         }
 
         private void ClearHoleCards(PokerPlayer p) => p.HoleCards.Clear();

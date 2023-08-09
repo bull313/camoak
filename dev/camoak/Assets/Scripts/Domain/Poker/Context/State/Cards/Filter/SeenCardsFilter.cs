@@ -17,6 +17,7 @@ namespace Camoak.Domain.Poker.Context.State.Cards.Filter
         {
             SeenCards.Clear();
             GameState.Players.ForEach(SeePlayerHoleCards);
+            GameState.BoardCards.ForEach(AddSeenCard);
         }
 
         public override bool AllowThrough(Card card)

@@ -30,6 +30,11 @@ namespace Camoak.Tests.UnitTests.Poker.Context.State.Cards.Filter
                         Card.JACK_OF_SPADES, Card.EIGHT_OF_SPADES
                     })
                     .Build())
+                .SetBoardCards(new() {
+                    Card.ACE_OF_SPADES,
+                    Card.NINE_OF_HEARTS,
+                    Card.FIVE_OF_SPADES
+                })
                 .Build();
 
             filter = new();
@@ -41,6 +46,7 @@ namespace Camoak.Tests.UnitTests.Poker.Context.State.Cards.Filter
         {
             Assert.IsFalse(filter.AllowThrough(Card.KING_OF_DIAMONDS));
             Assert.IsFalse(filter.AllowThrough(Card.EIGHT_OF_SPADES));
+            Assert.IsFalse(filter.AllowThrough(Card.NINE_OF_HEARTS));
         }
 
         [Test]

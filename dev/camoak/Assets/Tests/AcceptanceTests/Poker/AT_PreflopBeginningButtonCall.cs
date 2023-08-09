@@ -13,8 +13,7 @@ namespace Camoak.Tests.AcceptanceTests.Poker
     public class AT_PreflopBeginningButtonCall
     {
         [Test]
-        public void PlayerMovesHalfABigBlindFromStackToAction()
-        {
+        public void PlayerMovesHalfABigBlindFromStackToAction() =>
             PokerScenario.Create()
                 .Given()
                     .GameWithState(PokerGameStateBuilder.Create()
@@ -28,11 +27,9 @@ namespace Camoak.Tests.AcceptanceTests.Poker
                     .AssertStackEqual(99f, 0)
                     .AssertActionEqual(1f, 0)
                     .AssertAllElseUnchanged();
-        }
 
         [Test]
-        public void RefereeMakesItTheBigBlindPlayersTurn()
-        {
+        public void RefereeMakesItTheBigBlindPlayersTurn() =>
             PokerScenario.Create()
                 .Given()
                     .GameWithState(PokerGameStateBuilder.Create()
@@ -50,7 +47,6 @@ namespace Camoak.Tests.AcceptanceTests.Poker
                 .Then()
                     .AssertTurnPosition(0)
                     .AssertAllElseUnchanged();
-        }
     }
 
     internal class TestPreflopButtonBeginningCallActor : PokerPlayerActor

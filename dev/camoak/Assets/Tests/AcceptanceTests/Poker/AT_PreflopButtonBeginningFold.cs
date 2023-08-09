@@ -16,8 +16,7 @@ namespace Camoak.Tests.AcceptanceTests.Poker
     public class AT_PreflopBeginningButtonFold
     {
         [Test]
-        public void PlayerRemovesSelfFromTheAction()
-        {
+        public void PlayerRemovesSelfFromTheAction() =>
             PokerScenario.Create()
                 .Given()
                     .GameWithState(PokerGameStateBuilder.Create()
@@ -30,11 +29,9 @@ namespace Camoak.Tests.AcceptanceTests.Poker
                 .Then()
                     .AssertPlayersInAction(new() { 1 })
                     .AssertAllElseUnchanged();
-        }
 
         [Test]
-        public void RefereeResetsToANewHand()
-        {
+        public void RefereeResetsToANewHand() =>
             PokerScenario.Create()
                 .Given()
                     .GameWithState(PokerGameStateBuilder.Create()
@@ -42,7 +39,7 @@ namespace Camoak.Tests.AcceptanceTests.Poker
                         .SetPlayersInAction(new() { 1 })
                         .Build())
                     .WithRefereeActor(new NoLimitHoldemReferee())
-                    .WithCardSelector(new ForceHoleCardsSelector())
+                    .WithCardSelector(new PreflopBeginningButtonFoldSelector())
                 .When()
                     .RefereePlays()
                 .Then()
@@ -61,15 +58,14 @@ namespace Camoak.Tests.AcceptanceTests.Poker
                     .AssertTurnPosition(1)
 
                     .AssertAllElseUnchanged();
-        }
     }
 
-    internal class ForceHoleCardsSelector : ICardSelector
+    internal class PreflopBeginningButtonFoldSelector : ICardSelector
     {
         private int counter;
         private readonly Card[] dealCards;
 
-        public ForceHoleCardsSelector()
+        public PreflopBeginningButtonFoldSelector()
         {
             counter = 0;
             dealCards = new Card[]
