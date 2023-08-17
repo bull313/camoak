@@ -2,15 +2,12 @@
 using System.Linq;
 using Camoak.Domain.Poker.Context.State;
 using Camoak.Domain.Poker.Context.State.Cards;
-using UnityEngine;
 using UnityEngine.UI;
 
 namespace Camoak.Component.Poker.Table.Subcomponent
 {
     public class PlayerHoleCards : TableSubcomponent
     {
-        public const string CARD_PATH_TEMPLATE = "Sprites/Poker/Cards/Card{0}";
-
         private CardRenderer Renderer { get; set; }
         private List<Image> HoleCardImages { get; set; }
 

@@ -30,13 +30,12 @@ namespace Camoak.Tests.UnitTests.Poker.Context.State.Action.Referee
 
             gameState = PokerGameStateBuilder.Create()
                 .Copy(PokerCommonGameStates.PreflopBeginningState)
+                .SetBoardCards(new())
                 .SetPlayer(0, PokerPlayerBuilder.Create()
                     .Copy(PokerCommonGameStates.PreflopBeginningState.Players[0])
-                    .SetHoleCards(new())
                     .Build())
                 .SetPlayer(1, PokerPlayerBuilder.Create()
                     .Copy(PokerCommonGameStates.PreflopBeginningState.Players[1])
-                    .SetHoleCards(new())
                     .Build())
                 .Build();
 

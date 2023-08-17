@@ -9,7 +9,7 @@ namespace Camoak.Tests.UnitTests.Poker.Context.State.Action.Referee
     public class TestSetTurnPosition
     {
         private SetTurnPosition setTurnAction;
-        private PokerGameState gameState, gameStateCopy, literalGameState;
+        private PokerGameState gameState, gameStateCopy, gameStateLiteralPos;
 
         [SetUp]
         public void SetUp()
@@ -50,17 +50,17 @@ namespace Camoak.Tests.UnitTests.Poker.Context.State.Action.Referee
         [Test]
         public void TestSetTurnPositionGivenIntArgumentSetsDirectPosition()
         {
-            literalGameState = PokerGameStateBuilder.Create()
+            gameStateLiteralPos = PokerGameStateBuilder.Create()
                 .Copy(PokerCommonGameStates.PreflopBeginningState)
                 .SetPlayerPositions(new() { 1, 2, 3, 4, 0 })
                 .SetTurnPosition(0)
                 .Build();
 
             setTurnAction = new(2);
-            setTurnAction.GameState = literalGameState;
+            setTurnAction.GameState = gameStateLiteralPos;
             setTurnAction.Execute();
 
-            Assert.AreEqual(2, literalGameState.TurnPosition);
+            Assert.AreEqual(2, gameStateLiteralPos.TurnPosition);
         }
     }
 
