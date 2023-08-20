@@ -5,31 +5,41 @@ using NUnit.Framework;
 
 namespace Camoak.Tests.UnitTests.Poker.Context.State.Action.Referee.GameStateCheck
 {
-    public class TestSinglePlayerInActionCheck
+    public class TestAllPlayerActionsAreEqualCheck
     {
-        private SinglePlayerInActionCheck check;
+        private AllPlayerActionsAreEqualCheck check;
         private PokerGameState gameState;
 
         [SetUp]
         public void SetUp() => check = new();
 
         [Test]
-        public void TestSinglePlayerInActionSatisfiesCheck()
+        public void TestAllEqualActionSatisfiesCheck()
         {
             gameState = PokerGameStateBuilder.Create()
                 .Copy(PokerCommonGameStates.PreflopBeginningState)
-                .SetPlayersInAction(new() { 1 })
+                .SetPlayer(0, PokerPlayerBuilder.Create()
+                    .SetAction(1f)
+                    .Build())
+                .SetPlayer(1, PokerPlayerBuilder.Create()
+                    .SetAction(1f)
+                    .Build())
                 .Build();
 
             Assert.IsTrue(check.IsSatisfied(gameState));
         }
 
         [Test]
-        public void TestMultiplePlayersInActionDoesNotSatsifyCheck()
+        public void TestUnequalActionsDoesNotSatisfyCheck()
         {
             gameState = PokerGameStateBuilder.Create()
                 .Copy(PokerCommonGameStates.PreflopBeginningState)
-                .SetPlayersInAction(new() { 1, 0 })
+                .SetPlayer(0, PokerPlayerBuilder.Create()
+                    .SetAction(1f)
+                    .Build())
+                .SetPlayer(1, PokerPlayerBuilder.Create()
+                    .SetAction(2f)
+                    .Build())
                 .Build();
 
             Assert.IsFalse(check.IsSatisfied(gameState));

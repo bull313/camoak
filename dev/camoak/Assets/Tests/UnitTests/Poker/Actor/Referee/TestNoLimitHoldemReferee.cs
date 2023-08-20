@@ -47,5 +47,29 @@ namespace Camoak.Tests.UnitTests.Poker.Actor.Referee
                 actualSequence.GetHashCode()
             );
         }
+
+        [Test]
+        public void TestAllActionIsEqualAndIsBBPlayerTurnMoveToFlop()
+        {
+            gameState = PokerGameStateBuilder.Create()
+                .Copy(PokerCommonGameStates.PreflopBeginningState)
+                .SetPlayer(0, PokerPlayerBuilder.Create()
+                    .SetAction(1f)
+                    .Build())
+                .SetPlayer(1, PokerPlayerBuilder.Create()
+                    .SetAction(1f)
+                    .Build())
+                .SetTurnPosition(0)
+                .Build();
+
+            referee = new();
+            referee.GameState = gameState;
+            actualSequence = referee.SelectActionSequence();
+
+            Assert.AreEqual(
+                new MoveToFlopSequence().GetHashCode(),
+                actualSequence.GetHashCode()
+            );
+        }
     }
 }

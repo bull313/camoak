@@ -39,7 +39,7 @@ namespace Camoak.Tests.IntegrationTests
             Assert.IsNotNull(pokerTable.gameObject.GetComponentInChildren<PlayerHoleCards>());
             Assert.IsNotNull(pokerTable.gameObject.GetComponentInChildren<PlayerPositions>());
             Assert.IsNotNull(pokerTable.gameObject.GetComponentInChildren<PlayerStacks>());
-            Assert.AreEqual(2, buttons.Count);
+            Assert.AreEqual(3, buttons.Count);
 
             yield return GameTestSetup.WAIT_SINGLE_FRAME;
             yield return GameTestSetup.WAIT_SINGLE_FRAME;

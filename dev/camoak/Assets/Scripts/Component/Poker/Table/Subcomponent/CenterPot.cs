@@ -8,8 +8,11 @@ namespace Camoak.Component.Poker.Table.Subcomponent
 
         public void Start() => PotVisual = GetComponent<TextMeshProUGUI>();
 
+        private float GetCenterPotInCash() =>
+            GameState.CenterPot * GameState.BigBlindSize;
+
         private string GetCenterPot() =>
-            GameState.CenterPot
+            GetCenterPotInCash()
                 .ToString(PlayerMoneySubcomponent.MONETARY_FORMAT);
 
         public override void Notify() =>

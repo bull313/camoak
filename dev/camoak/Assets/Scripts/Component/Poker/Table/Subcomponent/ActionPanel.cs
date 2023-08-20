@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Camoak.Domain.Poker.Context.State.Action.Player;
+using TMPro;
 using UnityEngine.UI;
 
 namespace Camoak.Component.Poker.Table.Subcomponent
@@ -13,7 +14,7 @@ namespace Camoak.Component.Poker.Table.Subcomponent
         public void Start()
         {
             Buttons = new(GetComponentsInChildren<Button>());
-            Actions = new() { new Call(), new Fold() };
+            Actions = new() { new Call(), new Fold(), new Check() };
         }
 
         private bool IsPlayerTurn() =>
@@ -21,8 +22,20 @@ namespace Camoak.Component.Poker.Table.Subcomponent
             ==
             GameState.Player;
 
-        private void ToggleActive(Button button) =>
-            button.gameObject.SetActive(IsPlayerTurn());
+        private void ToggleActive(Button button)
+        {
+            button.gameObject.SetActive(
+                IsPlayerTurn()
+
+                /* Temporary Check Button Disable */
+                && (
+                    button.GetComponentInChildren<TextMeshProUGUI>().text != "CHECK"
+                    ||
+                    GameState.PlayerPositions[0] == 0
+                )
+            );
+        }
+            
 
         private void RemoveButtonListeners(Button button) =>
             button.onClick.RemoveAllListeners();

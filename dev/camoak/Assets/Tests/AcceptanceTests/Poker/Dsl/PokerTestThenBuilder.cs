@@ -103,6 +103,36 @@ namespace Camoak.Tests.AcceptanceTests.Poker.Dsl
             return this;
         }
 
+        public PokerTestThenBuilder AssertCenterPot(float expected)
+        {
+            Assert.AreEqual(expected, After.CenterPot);
+
+            After = PokerGameStateBuilder.Create()
+                .Copy(After)
+                .SetCenterPot(Before.CenterPot)
+                .Build();
+
+            return this;
+        }
+
+        public PokerTestThenBuilder AssertBoardCards(int n, params Card[] cards)
+        {
+            Assert.AreEqual(n, After.BoardCards.Count);
+
+            Enumerable.Range(0, cards.Length)
+                .ToList()
+                .ForEach(cardIdx =>
+                    Assert.AreEqual(cards[cardIdx], After.BoardCards[cardIdx])
+                );
+
+            After = PokerGameStateBuilder.Create()
+                .Copy(After)
+                .SetBoardCards(Before.BoardCards)
+                .Build();
+
+            return this;
+        }
+
         public PokerTestThenBuilder AssertAllElseUnchanged()
         {
             Assert.AreEqual(Before.GetHashCode(), After.GetHashCode());
