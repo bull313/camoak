@@ -62,10 +62,10 @@ namespace Camoak.Tests.UnitTests.Poker.Context.State.Action.Referee
 
             Assert.AreEqual(2, gameStateLiteralPos.TurnPosition);
         }
-    }
 
-    internal class TestTurnPosition : ITargetPosition
-    {
-        public int GetPosition(PokerGameState gameState) => 3;
+        private class TestTurnPosition : ITargetPosition
+        {
+            public int GetPosition(PokerGameState gameState) => 3;
+        }
     }
 }

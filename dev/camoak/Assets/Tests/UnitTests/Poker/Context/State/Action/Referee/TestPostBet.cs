@@ -58,10 +58,10 @@ namespace Camoak.Tests.UnitTests.Poker.Context.State.Action.Referee
                 gameState.GetHashCode()
             );
         }
-    }
 
-    internal class TestPosition : ITargetPosition
-    {
-        public int GetPosition(PokerGameState gameState) => 1;
+        private class TestPosition : ITargetPosition
+        {
+            public int GetPosition(PokerGameState gameState) => 1;
+        }
     }
 }

@@ -27,8 +27,8 @@ namespace Camoak.Tests.AcceptanceTests.Poker
                             .Build())
                         .SetTurnPosition(0)
                         .Build())
-                    .WithPlayerActor(new TestDoNothingActor())
-                    .WithPlayerActor(new TestPreflopFacingCallBigBlindCheckActor())
+                    .WithPlayerActor(new DoNothingActor())
+                    .WithPlayerActor(new CheckActor())
                     .WithRefereeActor(new NoLimitHoldemReferee())
                 .When()
                     .TurnPlayerPlays()
@@ -48,10 +48,10 @@ namespace Camoak.Tests.AcceptanceTests.Poker
                             .Build())
                         .SetTurnPosition(0)
                         .Build())
-                    .WithPlayerActor(new TestDoNothingActor())
-                    .WithPlayerActor(new TestPreflopFacingCallBigBlindCheckActor())
+                    .WithPlayerActor(new DoNothingActor())
+                    .WithPlayerActor(new CheckActor())
                     .WithRefereeActor(new NoLimitHoldemReferee())
-                    .WithCardSelector(new PreflopFacingCallBigBlindCheckSelector())
+                    .WithCardSelector(new TestCardSelector())
                 .When()
                     .RefereePlays()
                 .Then()
@@ -68,9 +68,9 @@ namespace Camoak.Tests.AcceptanceTests.Poker
                     .AssertAllElseUnchanged();
         }
 
-        internal class TestPreflopFacingCallBigBlindCheckActor : PokerPlayerActor
+        private class CheckActor : PokerPlayerActor
         {
-            public TestPreflopFacingCallBigBlindCheckActor()
+            public CheckActor()
                 : base(new BasicFilteredPokerGameState())
             { }
 
@@ -78,21 +78,21 @@ namespace Camoak.Tests.AcceptanceTests.Poker
                 Task.FromResult<PlayerAction>(new Check());
         }
 
-        internal class TestDoNothingActor : PokerPlayerActor
+        private class DoNothingActor : PokerPlayerActor
         {
-            public TestDoNothingActor()
+            public DoNothingActor()
                 : base(new BasicFilteredPokerGameState())
             { }
 
             public override Task<PlayerAction> SelectAction() => null;
         }
 
-        internal class PreflopFacingCallBigBlindCheckSelector : ICardSelector
+        private class TestCardSelector : ICardSelector
         {
             private int counter;
             private readonly Card[] dealCards;
 
-            public PreflopFacingCallBigBlindCheckSelector()
+            public TestCardSelector()
             {
                 counter = 0;
                 dealCards = new Card[]

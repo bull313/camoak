@@ -10,52 +10,56 @@ using NUnit.Framework;
 
 namespace Camoak.Tests.AcceptanceTests.Poker
 {
-    public class AT_PreflopBeginningButtonCall
+    public class AT_FlopTurnBeginningBigBlindCheck
     {
         [Test]
-        public void PlayerMovesHalfABigBlindFromStackToAction() =>
+        public void PlayerCheckActionDoesNothing() =>
             PokerScenario.Create()
                 .Given()
                     .GameWithState(PokerGameStateBuilder.Create()
-                        .Copy(PokerCommonGameStates.PreflopBeginningState)
+                        .Copy(PokerCommonGameStates.FlopBeginningState)
                         .Build())
-                    .WithPlayerActor(new CallActor())
+                    .WithPlayerActor(new DoNothingActor())
+                    .WithPlayerActor(new CheckActor())
                     .WithRefereeActor(new NoLimitHoldemReferee())
                 .When()
                     .TurnPlayerPlays()
                 .Then()
-                    .AssertStackEqual(99f, 0)
-                    .AssertActionEqual(1f, 0)
                     .AssertAllElseUnchanged();
 
         [Test]
-        public void RefereeMakesItTheBigBlindPlayersTurn() =>
+        public void RefereeMakesItTheButtonPlayersTurn() =>
             PokerScenario.Create()
                 .Given()
                     .GameWithState(PokerGameStateBuilder.Create()
-                        .Copy(PokerCommonGameStates.PreflopBeginningState)
-                        .SetPlayer(0, PokerPlayerBuilder.Create()
-                            .Copy(PokerCommonGameStates.PreflopBeginningState.Players[0])
-                            .SetStack(99f)
-                            .SetAction(1f)
-                            .Build())
+                        .Copy(PokerCommonGameStates.FlopBeginningState)
                         .Build())
-                    .WithPlayerActor(new CallActor())
+                    .WithPlayerActor(new DoNothingActor())
+                    .WithPlayerActor(new CheckActor())
                     .WithRefereeActor(new NoLimitHoldemReferee())
                 .When()
                     .RefereePlays()
                 .Then()
-                    .AssertTurnPosition(0)
+                    .AssertTurnPosition(1)
                     .AssertAllElseUnchanged();
 
-        private class CallActor : PokerPlayerActor
+        private class CheckActor : PokerPlayerActor
         {
-            public CallActor()
+            public CheckActor()
                 : base(new BasicFilteredPokerGameState())
             { }
 
             public override Task<PlayerAction> SelectAction() =>
-                Task.FromResult<PlayerAction>(new Call());
+                Task.FromResult<PlayerAction>(new Check());
+        }
+
+        private class DoNothingActor : PokerPlayerActor
+        {
+            public DoNothingActor()
+                : base(new BasicFilteredPokerGameState())
+            { }
+
+            public override Task<PlayerAction> SelectAction() => null;
         }
     }
 }

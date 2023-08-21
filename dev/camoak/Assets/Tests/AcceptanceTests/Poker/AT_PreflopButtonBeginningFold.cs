@@ -22,7 +22,7 @@ namespace Camoak.Tests.AcceptanceTests.Poker
                     .GameWithState(PokerGameStateBuilder.Create()
                         .Copy(PokerCommonGameStates.PreflopBeginningState)
                         .Build())
-                    .WithPlayerActor(new TestPreflopButtonBeginningFoldActor())
+                    .WithPlayerActor(new FoldActor())
                     .WithRefereeActor(new NoLimitHoldemReferee())
                 .When()
                     .TurnPlayerPlays()
@@ -39,7 +39,7 @@ namespace Camoak.Tests.AcceptanceTests.Poker
                         .SetPlayersInAction(new() { 1 })
                         .Build())
                     .WithRefereeActor(new NoLimitHoldemReferee())
-                    .WithCardSelector(new PreflopBeginningButtonFoldSelector())
+                    .WithCardSelector(new TestCardSelector())
                 .When()
                     .RefereePlays()
                 .Then()
@@ -58,38 +58,38 @@ namespace Camoak.Tests.AcceptanceTests.Poker
                     .AssertTurnPosition(1)
 
                     .AssertAllElseUnchanged();
-    }
 
-    internal class PreflopBeginningButtonFoldSelector : ICardSelector
-    {
-        private int counter;
-        private readonly Card[] dealCards;
-
-        public PreflopBeginningButtonFoldSelector()
+        private class TestCardSelector : ICardSelector
         {
-            counter = 0;
-            dealCards = new Card[]
+            private int counter;
+            private readonly Card[] dealCards;
+
+            public TestCardSelector()
             {
+                counter = 0;
+                dealCards = new Card[]
+                {
                 Card.TEN_OF_SPADES,
                 Card.FOUR_OF_DIAMONDS,
                 Card.FOUR_OF_CLUBS,
                 Card.FIVE_OF_SPADES
-            };
+                };
+            }
+
+            public int SelectCard(List<Card> deck) =>
+                deck.IndexOf(
+                    dealCards[counter++ % dealCards.Length]
+                );
         }
 
-        public int SelectCard(List<Card> deck) =>
-            deck.IndexOf(
-                dealCards[counter++ % dealCards.Length]
-            );
-    }
+        private class FoldActor : PokerPlayerActor
+        {
+            public FoldActor()
+                : base(new BasicFilteredPokerGameState())
+            { }
 
-    internal class TestPreflopButtonBeginningFoldActor : PokerPlayerActor
-    {
-        public TestPreflopButtonBeginningFoldActor()
-            : base(new BasicFilteredPokerGameState())
-        { }
-
-        public override Task<PlayerAction> SelectAction() =>
-            Task.FromResult<PlayerAction>(new Fold());
+            public override Task<PlayerAction> SelectAction() =>
+                Task.FromResult<PlayerAction>(new Fold());
+        }
     }
 }

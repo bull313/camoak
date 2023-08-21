@@ -53,7 +53,7 @@ namespace Camoak.Tests.UnitTests.Poker.Context.State.Action.Referee
                 2,
                 new CardDealer(
                     new BasicDeckGenerator(new SeenCardsFilter()),
-                    new TestDealHoleCardsSelector()
+                    new TestCardSelector()
                 )
             );
 
@@ -97,28 +97,28 @@ namespace Camoak.Tests.UnitTests.Poker.Context.State.Action.Referee
                 gameState.GetHashCode()
             );
         }
-    }
 
-    internal class TestDealHoleCardsSelector : ICardSelector
-    {
-        private int counter;
-        private readonly Card[] dealCards;
-
-        public TestDealHoleCardsSelector()
+        private class TestCardSelector : ICardSelector
         {
-            counter = 0;
-            dealCards = new Card[]
+            private int counter;
+            private readonly Card[] dealCards;
+
+            public TestCardSelector()
             {
+                counter = 0;
+                dealCards = new Card[]
+                {
                 Card.ACE_OF_DIAMONDS,
                 Card.TWO_OF_DIAMONDS,
                 Card.FIVE_OF_HEARTS,
                 Card.SIX_OF_DIAMONDS
-            };
-        }
+                };
+            }
 
-        public int SelectCard(List<Card> deck) =>
-            deck.IndexOf(
-                dealCards[counter++ % dealCards.Length]
-            );
+            public int SelectCard(List<Card> deck) =>
+                deck.IndexOf(
+                    dealCards[counter++ % dealCards.Length]
+                );
+        }
     }
 }
