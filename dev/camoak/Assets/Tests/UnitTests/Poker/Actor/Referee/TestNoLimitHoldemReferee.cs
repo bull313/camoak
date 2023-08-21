@@ -31,11 +31,20 @@ namespace Camoak.Tests.UnitTests.Poker.Actor.Referee
         }
 
         [Test]
-        public void TestMultiplePlayersInTheHandSelectsMoveNextTurnSequence()
+        public void TestPreflopAllActionEqualAndNotBBTurnMoveToNextPlayer()
         {
             gameState = PokerGameStateBuilder.Create()
                 .Copy(PokerCommonGameStates.PreflopBeginningState)
-                .SetPlayersInAction(new() { 1, 0 })
+                .SetPlayer(0, PokerPlayerBuilder.Create()
+                    .Copy(PokerCommonGameStates.PreflopBeginningState.Players[0])
+                    .SetAction(1f)
+                    .Build())
+                .SetPlayer(1, PokerPlayerBuilder.Create()
+                    .Copy(PokerCommonGameStates.PreflopBeginningState.Players[1])
+                    .SetAction(1f)
+                    .Build())
+                .SetTurnPosition(1)
+                .SetBoardCards(new())
                 .Build();
 
             referee = new();
@@ -49,7 +58,7 @@ namespace Camoak.Tests.UnitTests.Poker.Actor.Referee
         }
 
         [Test]
-        public void TestAllActionIsEqualAndIsBBPlayerTurnMoveToFlop()
+        public void TestPreflopAllActionEqualAndBBTurnMoveToFlop()
         {
             gameState = PokerGameStateBuilder.Create()
                 .Copy(PokerCommonGameStates.PreflopBeginningState)
@@ -60,6 +69,7 @@ namespace Camoak.Tests.UnitTests.Poker.Actor.Referee
                     .SetAction(1f)
                     .Build())
                 .SetTurnPosition(0)
+                .SetBoardCards(new())
                 .Build();
 
             referee = new();
@@ -68,6 +78,23 @@ namespace Camoak.Tests.UnitTests.Poker.Actor.Referee
 
             Assert.AreEqual(
                 new MoveToFlopSequence().GetHashCode(),
+                actualSequence.GetHashCode()
+            );
+        }
+
+        [Test]
+        public void TestFlopAllActionEqualAndBBTurnMoveToNextPlayer()
+        {
+            gameState = PokerGameStateBuilder.Create()
+                .Copy(PokerCommonGameStates.FlopBeginningState)
+                .Build();
+
+            referee = new();
+            referee.GameState = gameState;
+            actualSequence = referee.SelectActionSequence();
+
+            Assert.AreEqual(
+                new MoveToNextPlayerSequence().GetHashCode(),
                 actualSequence.GetHashCode()
             );
         }

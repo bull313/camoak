@@ -72,25 +72,25 @@ namespace Camoak.Tests.UnitTests.Poker.Actor.Referee.Schema
                 schema.Evaluate(null, checks).GetType().Name
             );
         }
-    }
 
-    internal class TestTrueGameCheck : IGameStateCheck
-    {
-        public bool IsSatisfied(PokerGameState gameState) => true;
-    }
+        private class TestTrueGameCheck : IGameStateCheck
+        {
+            public bool IsSatisfied(PokerGameState gameState) => true;
+        }
 
-    internal class TestFalseGameCheck : IGameStateCheck
-    {
-        public bool IsSatisfied(PokerGameState gameState) => false;
-    }
+        private class TestFalseGameCheck : IGameStateCheck
+        {
+            public bool IsSatisfied(PokerGameState gameState) => false;
+        }
 
-    internal class TestSequence1 : RefereeActionSequence
-    {
-        protected override List<RefereeAction> InitSequence() => null;
-    }
+        private class TestSequence1 : RefereeActionSequence
+        {
+            protected override List<RefereeAction> InitSequence() => null;
+        }
 
-    internal class TestSequence2 : RefereeActionSequence
-    {
-        protected override List<RefereeAction> InitSequence() => null;
+        private class TestSequence2 : RefereeActionSequence
+        {
+            protected override List<RefereeAction> InitSequence() => null;
+        }
     }
 }

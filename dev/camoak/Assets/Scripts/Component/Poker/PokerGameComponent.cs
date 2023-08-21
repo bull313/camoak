@@ -90,6 +90,7 @@ namespace Camoak.Component.Poker
             Table.UpdateView();
         }
 
+        /* Temporary method to restart game */
         private void ResetGame()
         {
             Game = new()
@@ -129,6 +130,11 @@ namespace Camoak.Component.Poker
             Game.PlayReferee();
         }
 
+        /* Temporary method to determine reset condition */
+        private bool IsResetConditionMet() =>
+            Game.GameContext.GameState.BoardCards.Count > 0
+            && Game.GameContext.GameState.TurnPosition == 1;
+
         private async Task PlayATurn()
         {
             GameIdle = false;
@@ -137,7 +143,7 @@ namespace Camoak.Component.Poker
             UpdateTable();
 
             /* Temporarily resets game until more features come out */
-            if (Game.GameContext.GameState.BoardCards.Count > 0)
+            if (IsResetConditionMet())
             {
                 await Task.Run(() => Thread.Sleep(500));
                 ResetGame();
@@ -156,17 +162,17 @@ namespace Camoak.Component.Poker
         {
             if (GameIdle) _ = PlayATurn();
         }
-    }
 
-    internal class BasicPokerBot : PokerPlayerActor
-    {
-        public BasicPokerBot() : base(new BasicFilteredPokerGameState())
-        { }
+        private class BasicPokerBot : PokerPlayerActor
+        {
+            public BasicPokerBot() : base(new BasicFilteredPokerGameState())
+            { }
 
-        public override Task<PlayerAction> SelectAction() =>
-            GameState.TurnPosition == 0 ?
-            Task.FromResult<PlayerAction>(new Check())
-            :
-            Task.FromResult<PlayerAction>(new Call());
+            public override Task<PlayerAction> SelectAction() =>
+                GameState.TurnPosition == 0 ?
+                Task.FromResult<PlayerAction>(new Check())
+                :
+                Task.FromResult<PlayerAction>(new Call());
+        }
     }
 }

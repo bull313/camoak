@@ -25,11 +25,11 @@ namespace Camoak.Tests.UnitTests.Poker.Context.State.Cards.Deck
         [Test]
         public void TestAceJackOfHeartsFilterGeneratesOnlyAceJackOfHearts() =>
             Assert.IsTrue(expectedDeck.SequenceEqual(deck));
-    }
 
-    internal class TestAceJackOfHeartsOnlyFilter : CardFilter
-    {
-        public override bool AllowThrough(Card card) =>
-            card == Card.ACE_OF_HEARTS || card == Card.JACK_OF_HEARTS;
+        private class TestAceJackOfHeartsOnlyFilter : CardFilter
+        {
+            public override bool AllowThrough(Card card) =>
+                card == Card.ACE_OF_HEARTS || card == Card.JACK_OF_HEARTS;
+        }
     }
 }

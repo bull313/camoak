@@ -128,33 +128,33 @@ namespace Camoak.Tests.UnitTests.Poker
             gameManager.GetRefereeActionSequence();
             Assert.AreEqual(expectedRefSequence, gameManager.SelectedRefereeAction);
         }
-    }
 
-    internal class TestPokerPlayerActor : PokerPlayerActor
-    {
-        private readonly PlayerAction action;
+        private class TestPokerPlayerActor : PokerPlayerActor
+        {
+            private readonly PlayerAction action;
 
-        public TestPokerPlayerActor(PlayerAction a) : base(
-            new BasicFilteredPokerGameState()
-        ) => action = a;
+            public TestPokerPlayerActor(PlayerAction a) : base(
+                new BasicFilteredPokerGameState()
+            ) => action = a;
 
-        public override Task<PlayerAction> SelectAction() =>
-            Task.FromResult(action);
-    }
+            public override Task<PlayerAction> SelectAction() =>
+                Task.FromResult(action);
+        }
 
-    internal class TestReferee : PokerRefereeActor
-    {
-        private readonly RefereeActionSequence sequence;
+        private class TestReferee : PokerRefereeActor
+        {
+            private readonly RefereeActionSequence sequence;
 
-        protected override List<IGameStateCheck> GameChecks => new();
+            protected override List<IGameStateCheck> GameChecks => new();
 
-        protected override LogicSchema GameLogicSchema
-            => new(
-                new KeyValuePair<List<bool?>, RefereeActionSequence>(
-                    new() { null }, sequence
-                )
-            );
+            protected override LogicSchema GameLogicSchema
+                => new(
+                    new KeyValuePair<List<bool?>, RefereeActionSequence>(
+                        new() { null }, sequence
+                    )
+                );
 
-        public TestReferee(RefereeActionSequence seq) => sequence = seq;
+            public TestReferee(RefereeActionSequence seq) => sequence = seq;
+        }
     }
 }
