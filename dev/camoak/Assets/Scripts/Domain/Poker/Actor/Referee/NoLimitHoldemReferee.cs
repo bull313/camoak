@@ -7,12 +7,14 @@ namespace Camoak.Domain.Poker.Actor.Referee
 {
     public class NoLimitHoldemReferee : PokerRefereeActor
     {
+        public const int EMPTY_BOARD_SIZE = 0;
+
         protected override List<IGameStateCheck> GameChecks => new()
         {
             new SinglePlayerInActionCheck(),
             new AllPlayerActionsAreEqualCheck(),
             new IsBigBlindPlayerTurnCheck(),
-            new IsBoardEmptyCheck()
+            new NumCardsOnBoardCheck(EMPTY_BOARD_SIZE)
         };
 
         protected override LogicSchema GameLogicSchema
