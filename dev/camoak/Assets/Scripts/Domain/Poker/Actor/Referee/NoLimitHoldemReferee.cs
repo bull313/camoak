@@ -14,15 +14,17 @@ namespace Camoak.Domain.Poker.Actor.Referee
             new SinglePlayerInActionCheck(),
             new AllPlayerActionsAreEqualCheck(),
             new IsBigBlindPlayerTurnCheck(),
+            new IsButtonPlayerTurnCheck(),
             new NumCardsOnBoardCheck(EMPTY_BOARD_SIZE)
         };
 
         protected override LogicSchema GameLogicSchema
             => new(
-                new(new() { true, null, null, null }, new EndHandActionSequence()),
-                new(new() { false, true, false, true }, new MoveToNextPlayerSequence()),
-                new(new() { false, true, true, true }, new MoveToFlopSequence()),
-                new(new() { false, true, true, false }, new MoveToNextPlayerSequence())
+                new(new() { true, null, null, null, null }, new EndHandActionSequence()),
+                new(new() { false, true, false, true, true }, new MoveToNextPlayerSequence()),
+                new(new() { false, true, true, false, true }, new MoveToFlopSequence()),
+                new(new() { false, true, true, false, false }, new MoveToNextPlayerSequence()),
+                new(new() { false, true, false, true, false }, new MoveToNextStreetSequence())
             );
     }
 }
