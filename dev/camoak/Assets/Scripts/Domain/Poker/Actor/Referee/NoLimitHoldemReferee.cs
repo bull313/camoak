@@ -8,6 +8,8 @@ namespace Camoak.Domain.Poker.Actor.Referee
     public class NoLimitHoldemReferee : PokerRefereeActor
     {
         public const int EMPTY_BOARD_SIZE = 0;
+        public const int FLOP_DEAL_CARDS = 3;
+        public const int TURN_RIVER_DEAL_CARDS = 1;
 
         protected override List<IGameStateCheck> GameChecks => new()
         {
@@ -22,9 +24,9 @@ namespace Camoak.Domain.Poker.Actor.Referee
             => new(
                 new(new() { true, null, null, null, null }, new EndHandActionSequence()),
                 new(new() { false, true, false, true, true }, new MoveToNextPlayerSequence()),
-                new(new() { false, true, true, false, true }, new MoveToFlopSequence()),
+                new(new() { false, true, true, false, true }, new MoveToNextStreetSequence(FLOP_DEAL_CARDS)),
                 new(new() { false, true, true, false, false }, new MoveToNextPlayerSequence()),
-                new(new() { false, true, false, true, false }, new MoveToNextStreetSequence())
+                new(new() { false, true, false, true, false }, new MoveToNextStreetSequence(TURN_RIVER_DEAL_CARDS))
             );
     }
 }

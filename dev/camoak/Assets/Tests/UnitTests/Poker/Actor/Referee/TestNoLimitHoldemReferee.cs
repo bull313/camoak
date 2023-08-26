@@ -77,7 +77,7 @@ namespace Camoak.Tests.UnitTests.Poker.Actor.Referee
             actualSequence = referee.SelectActionSequence();
 
             Assert.AreEqual(
-                new MoveToFlopSequence().GetHashCode(),
+                new MoveToNextStreetSequence(3).GetHashCode(),
                 actualSequence.GetHashCode()
             );
         }
@@ -112,7 +112,7 @@ namespace Camoak.Tests.UnitTests.Poker.Actor.Referee
             actualSequence = referee.SelectActionSequence();
 
             Assert.AreEqual(
-                new MoveToNextStreetSequence().GetHashCode(),
+                new MoveToNextStreetSequence(1).GetHashCode(),
                 actualSequence.GetHashCode()
             );
         }
