@@ -22,20 +22,19 @@ namespace Camoak.Component.Poker.Table.Subcomponent
             ==
             GameState.Player;
 
+        /* Temporary Disable Buttons Based on Legality */
+        private bool ShouldDisableButton(Button button) => (
+            button.GetComponentInChildren<TextMeshProUGUI>().text == "CHECK"
+            && GameState.BoardCards.Count == 0
+            && GameState.PlayerPositions[^1] == GameState.Player
+        );
+
         private void ToggleActive(Button button)
         {
             button.gameObject.SetActive(
-                IsPlayerTurn()
-
-                /* Temporary Check Button Disable */
-                && (
-                    button.GetComponentInChildren<TextMeshProUGUI>().text != "CHECK"
-                    ||
-                    GameState.PlayerPositions[0] == 0
-                )
+                IsPlayerTurn() && ShouldDisableButton(button) == false
             );
         }
-            
 
         private void RemoveButtonListeners(Button button) =>
             button.onClick.RemoveAllListeners();
