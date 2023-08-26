@@ -110,5 +110,44 @@ namespace Camoak.Tests.Common.Poker
                     Card.EIGHT_OF_HEARTS
                 })
                 .Build();
+
+        public static readonly PokerGameState RiverBeginningState =
+            PokerGameStateBuilder.Create()
+                .SetPlayers(new()
+                {
+                    PokerPlayerBuilder.Create()
+                        .SetStack(99f)
+                        .SetAction(0f)
+                        .SetHoleCards(new()
+                        {
+                            Card.TWO_OF_DIAMONDS,
+                            Card.EIGHT_OF_CLUBS
+                        })
+                        .Build(),
+
+                    PokerPlayerBuilder.Create()
+                        .SetStack(99f)
+                        .SetAction(0f)
+                        .SetHoleCards(new()
+                        {
+                            Card.SEVEN_OF_HEARTS,
+                            Card.TWO_OF_CLUBS
+                        })
+                        .Build()
+                })
+                .SetBigBlindSize(10)
+                .SetPlayerPositions(new() { 1, 0 })
+                .SetPlayersInAction(new() { 1, 0 })
+                .SetTurnPosition(0)
+                .SetCenterPot(2f)
+                .SetBoardCards(new()
+                {
+                    Card.SEVEN_OF_CLUBS,
+                    Card.TEN_OF_DIAMONDS,
+                    Card.FOUR_OF_SPADES,
+                    Card.EIGHT_OF_HEARTS,
+                    Card.TEN_OF_HEARTS
+                })
+                .Build();
     }
 }
