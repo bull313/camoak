@@ -72,5 +72,43 @@ namespace Camoak.Tests.Common.Poker
                     Card.TWO_OF_CLUBS
                 })
                 .Build();
+
+        public static readonly PokerGameState TurnBeginningState =
+            PokerGameStateBuilder.Create()
+                .SetPlayers(new()
+                {
+                    PokerPlayerBuilder.Create()
+                        .SetStack(99f)
+                        .SetAction(0f)
+                        .SetHoleCards(new()
+                        {
+                            Card.SIX_OF_SPADES,
+                            Card.TEN_OF_HEARTS
+                        })
+                        .Build(),
+
+                    PokerPlayerBuilder.Create()
+                        .SetStack(99f)
+                        .SetAction(0f)
+                        .SetHoleCards(new()
+                        {
+                            Card.TEN_OF_SPADES,
+                            Card.SEVEN_OF_DIAMONDS
+                        })
+                        .Build()
+                })
+                .SetBigBlindSize(10)
+                .SetPlayerPositions(new() { 1, 0 })
+                .SetPlayersInAction(new() { 1, 0 })
+                .SetTurnPosition(0)
+                .SetCenterPot(2f)
+                .SetBoardCards(new()
+                {
+                    Card.JACK_OF_CLUBS,
+                    Card.SEVEN_OF_SPADES,
+                    Card.JACK_OF_HEARTS,
+                    Card.EIGHT_OF_HEARTS
+                })
+                .Build();
     }
 }
