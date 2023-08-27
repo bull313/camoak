@@ -132,7 +132,8 @@ namespace Camoak.Component.Poker
 
         /* Temporary method to determine reset condition */
         private bool IsResetConditionMet() =>
-            Game.GameContext.GameState.BoardCards.Count > 4;
+            Game.GameContext.GameState.BoardCards.Count > 4
+            && Game.GameContext.GameState.TurnPosition == 1;
 
         private async Task PlayATurn()
         {
